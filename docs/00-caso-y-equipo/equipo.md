@@ -4,17 +4,17 @@
 
 | Nombre y Apellido | Legajo | Carrera | Rol en el proyecto |
 |-------------------|--------|---------|-------------------|
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
+| Mateo Anderson | [COMPLETAR] | Bioingeniería | [COMPLETAR] |
+| Belen Hornus | [COMPLETAR] | Bioingeniería | [COMPLETAR] |
+| Sheila Riffel | [COMPLETAR] | Bioingeniería | [COMPLETAR] |
 
 ## Número de grupo
 
-**Grupo Nº:** [COMPLETAR]
+**Grupo Nº: 6**  
 
 ## Repositorio
 
-**URL del repositorio:** `https://github.com/[usuario]/[nombre-repo]`
+**URL del repositorio:** `https://github.com/sheilariffel/Plan_de_Proyecto_Grupo6.git`
 
 ---
 
