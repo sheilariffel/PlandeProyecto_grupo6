@@ -14,7 +14,7 @@
 
 ## Repositorio
 
-**URL del repositorio:** `https://github.com/sheilariffel/Plan_de_Proyecto_Grupo6.git`
+**URL del repositorio:** `https://github.com/sheilariffel/PlandeProyecto_grupo6.git`
 
 ---
 
