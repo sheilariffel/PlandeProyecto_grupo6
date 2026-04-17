@@ -43,7 +43,8 @@ mindmap
 
 ## Exclusiones del alcance
 
-> [COMPLETAR: indicar explícitamente qué NO está incluido en el proyecto para evitar ambigüedades]
+> A continuación se listan explícitamente los elementos que quedan fuera del alcance del proyecto, con el objetivo de prevenir desviaciones, gestionar expectativas de los stakeholders y evitar ambigüedades durante la ejecución:
+
 
 - [COMPLETAR: exclusión 1]
 - [COMPLETAR: exclusión 2]
