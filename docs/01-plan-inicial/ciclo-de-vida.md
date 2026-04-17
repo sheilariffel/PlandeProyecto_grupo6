@@ -2,7 +2,7 @@
 
 ## Enfoque seleccionado
 
-> **[COMPLETAR: Predictivo / Adaptativo / Híbrido]**
+> Híbrido
 
 ## Justificación de la elección
 
