@@ -4,7 +4,7 @@
 
 ```mermaid
 mindmap
-  root(("🎯 Proyecto\n[Nombre]"))
+  root(("🎯 BioNest"))
     Entregable 1: Prototipo físico ensamblado
       [Módulo de oxigenación]
       [Circuito de bombeo]
