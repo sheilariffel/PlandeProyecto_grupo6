@@ -5,9 +5,10 @@
 ```mermaid
 mindmap
   root(("🎯 Proyecto\n[Nombre]"))
-    Entregable 1
-      [Sub-entregable 1.1]
-      [Sub-entregable 1.2]
+    Entregable 1: Prototipo físico ensamblado
+      [Módulo de oxigenación]
+      [Circuito de bombeo]
+[Integración mecánica del sistema]
     Entregable 2
       [Sub-entregable 2.1]
       [Sub-entregable 2.2]
