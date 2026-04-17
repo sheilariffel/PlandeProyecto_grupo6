@@ -9,16 +9,27 @@ mindmap
       [Módulo de oxigenación]
       [Circuito de bombeo]
       [Integración mecánica del sistema]
-    Entregable 2
-      [Sub-entregable 2.1]
-      [Sub-entregable 2.2]
-    Entregable 3
-      [Sub-entregable 3.1]
-      [Sub-entregable 3.2]
-    Entregable 4
-      [Sub-entregable 4.1]
+      [Receptáculo bioimpreso]
+    Entregable 2: Dashboard
+      [Interfaz de usuario]
+      [Adquisición de datos]
+      [Presión, temperatura, pH, volumen]
+      [Almacenamiento y registro de datos]
+    Entregable 3: Documentación técnica
+      [Especificaciones técnicas]
+      [Planos CAD]
+      [Fichas de biomateriales]
+      [Log técnico]
+    Entregable 4: Protocolo de pruebas
+      [Ensayos hidráulicos]
+      [Pruebas de estanqueidad]
+      [Ensayos térmicos]
+      [Informe de resultados]
     Entregable 5
-      [Sub-entregable 5.1]
+      [Restricciones de uso]
+      [Análisis bioético]
+      [Documentación para comité de ética]
+      [Marco normativo aplicable]
 ```
 
 ## Detalle de entregables
