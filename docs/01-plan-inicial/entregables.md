@@ -36,10 +36,11 @@ mindmap
 
 | # | Entregable | Descripción | Responsable | Criterio de aceptación |
 |---|-----------|-------------|------------|------------------------|
-| 1 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
+| 1 | Prototipo físico ensamblado | Receptáculo uterino bioimpreso integrado al circuito de soporte vital (bombeo, oxigenación, diálisis). | Bioingeniero / Esp. Materiales / Diseño Industrial | [COMPLETAR] |
 | 2 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
 | 3 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
 | 4 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
+| 5 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
 
 ## Exclusiones del alcance
 
