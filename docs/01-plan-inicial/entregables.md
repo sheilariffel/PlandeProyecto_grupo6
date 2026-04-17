@@ -16,6 +16,8 @@ mindmap
       [Sub-entregable 3.2]
     Entregable 4
       [Sub-entregable 4.1]
+    Entregable 5
+      [Sub-entregable 5.1]
 ```
 
 ## Detalle de entregables
