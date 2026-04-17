@@ -8,7 +8,7 @@ mindmap
     Entregable 1: Prototipo físico ensamblado
       [Módulo de oxigenación]
       [Circuito de bombeo]
-[Integración mecánica del sistema]
+      [Integración mecánica del sistema]
     Entregable 2
       [Sub-entregable 2.1]
       [Sub-entregable 2.2]
