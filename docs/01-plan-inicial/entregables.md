@@ -36,11 +36,11 @@ mindmap
 
 | # | Entregable | Descripción | Responsable | Criterio de aceptación |
 |---|-----------|-------------|------------|------------------------|
-| 1 | Prototipo físico ensamblado | Receptáculo uterino bioimpreso integrado al circuito de soporte vital (bombeo, oxigenación, diálisis). | Bioingeniero / Esp. Materiales / Diseño Industrial | [COMPLETAR] |
-| 2 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
-| 3 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
-| 4 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
-| 5 | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR] |
+| 1 | Prototipo físico ensamblado | Receptáculo uterino bioimpreso integrado al circuito de soporte vital (bombeo, oxigenación, diálisis). | Bioingeniero / Esp. Materiales / Diseño Industrial | Superación Stage-Gates S1-S4: estanqueidad, circulación 24h, transferencia gaseosa verificada. |
+| 2 | Sistema electrónico (Dashboard) | Sistema de sensores con interfaz de usuario para visualización y registro de datos en tiempo real. | Bioingeniero (electrónica) / Desarrollador software | Stage-Gate S5: lectura estable de variables críticas y almacenamiento de datos sin errores. |
+| 3 | Documentación técnica | Diagramas, planos CAD, fichas técnicas de biomateriales y registro de decisiones. | Director Proyecto / Biotecnólogo / Bioingeniero | Documentación aprobada que refleja el estado final "as-built" del prototipo. |
+| 4 | Protocolo de pruebas | Procedimientos de ensayo hidráulico y térmico ejecutados con resultados y conclusiones. | Biotecnólogo / Técnico / Bioingeniero | Protocolo firmado con resultados dentro de los rangos definidos para la prueba de concepto. |
+| 5 | Expediente bioético | Documentación formal sobre implicancias bioéticas, restricciones y marco normativo. | Director del Proyecto / Biotecnólogo | Expediente presentado y aprobación institucional obtenida para el Stage-Gate 1. |
 
 ## Exclusiones del alcance
 
