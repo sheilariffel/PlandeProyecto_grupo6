@@ -4,24 +4,59 @@
 
 ```mermaid
 mindmap
-  root(("📁 [Nombre\ndel Proyecto]"))
-    1. [Entregable 1]
-      1.1 [Tarea 1.1]
-      1.2 [Tarea 1.2]
-        1.2.1 [Sub-tarea]
-        1.2.2 [Sub-tarea]
-      1.3 [Tarea 1.3]
-    2. [Entregable 2]
-      2.1 [Tarea 2.1]
-      2.2 [Tarea 2.2]
-      2.3 [Tarea 2.3]
-    3. [Entregable 3]
-      3.1 [Tarea 3.1]
-      3.2 [Tarea 3.2]
-    4. Gestión del Proyecto
-      4.1 Planificación
-      4.2 Seguimiento y Control
-      4.3 Cierre
+  root(("📁 BioNest\nSistema de Ectogénesis"))
+
+    1. Plan de Gestión
+      1.1 Formulación del Proyecto
+        1.1.1 Acta de Constitución
+        1.1.2 Plan de Gestión del Proyecto
+        1.1.3 Registro de Stakeholders
+        1.1.4 Registro de Riesgos Inicial
+      1.2 Expediente bioético
+        1.2.1 Documentación Comité Ética
+        1.2.2 Análisis de restricciones
+        1.2.3 Aprobación institucional
+      1.3 Documentación técnica inicial
+        1.3.1 Parámetros fisiológicos lagomorfos
+        1.3.2 Matriz de escalabilidad
+        1.3.3 Diseño conceptual sistema
+        1.3.4 Diagramas de flujo
+
+    2. Prototipo físico y electrónico
+      2.1 Receptáculo bioimpreso
+        2.1.1 Modelado CAD receptáculo
+        2.1.2 Bioimpresión del receptáculo
+        2.1.3 Pruebas de estanqueidad
+      2.2 Subsistemas fisiológicos
+        2.2.1 Módulo de bombeo
+        2.2.2 Sistema de hematosis
+        2.2.3 Módulo de diálisis
+        2.2.4 Sistema de inyección
+      2.3 Sistema electrónico
+        2.3.1 Matriz de sensores
+        2.3.2 Dashboard de monitoreo
+        2.3.3 Sistema de registro
+        2.3.4 Módulo de estimulación
+
+    3. Integración y validación
+      3.1 Integración del sistema
+        3.1.1 Ensamblaje del prototipo
+        3.1.2 Acople sensores-Dashboard
+        3.1.3 Calibración del sistema
+      3.2 Ensayos y validación
+        3.2.1 Ensayos hidráulicos
+        3.2.2 Ensayos térmicos
+        3.2.3 Prueba integrada 24hs
+        3.2.4 Informe de resultados
+
+    4. Cierre y transferencia
+      4.1 Documentación final
+        4.1.1 Planos finales As-Built
+        4.1.2 Fichas técnicas
+        4.1.3 Log de decisiones
+      4.2 Presentación
+        4.2.1 Materiales institucionales
+        4.2.2 Presentación al cliente
 ```
 
 ## Diccionario de la WBS
