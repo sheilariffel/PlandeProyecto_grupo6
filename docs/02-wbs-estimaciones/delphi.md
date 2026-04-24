@@ -71,13 +71,13 @@ E3: "Y funcionar sin crashes durante pruebas de 48hs continuas" (220hs)
 | ID                | Tarea                              | Esfuerzo | Recursos          | Dedicación     | Duración       |
 | ----------------- | ---------------------------------- | -------- | ----------------- | -------------- | -------------- |
 | 1.1.5             | Invest. bibliográfica              | 150hs    | Biotecnólogo (1)  | 75%            | **25 días**    |
-| 1.2.3             | Aprobación ética                   | 90hs     | Director (1)      | 30% (trámites) | **30 días** ⏰  |
+| 1.2.3             | Aprobación ética                   | 90hs     | Director (1)      | 30% (trámites) | **30 días**   |
 | 2.0.1             | Invest. biomateriales              | 220hs    | Esp. Mat (1)      | 90%            | **30 días**    |
 | 2.0.2             | Pruebas biocompat.                 | 150hs    | Esp. Mat (1)      | 90%            | **20 días**    |
 | 2.1.2             | Bioimpresión v1                    | 90hs     | Esp. Mat (1)      | 80%            | **12 días**    |
 | 2.2.7             | Invest. hematosis                  | 190hs    | Biotec (1)        | 90%            | **25 días**    |
 | 2.4.6             | Dashboard v1                       | 220hs    | Desarrollador (1) | 90%            | **30 días**    |
-| 3.1.5             | Resolución problemas               | 150hs    | Equipo (3)        | 75%            | **20 días** ⚠️ |
+| 3.1.5             | Resolución problemas               | 150hs    | Equipo (3)        | 75%            | **20 días**  |
 | 4.1.4             | Doc. científica                    | 150hs    | Biotec (1)        | 90%            | **20 días**    |
 
 > **Fórmula:** Duración = Esfuerzo / (Recursos × Dedicación × Hs/día)
