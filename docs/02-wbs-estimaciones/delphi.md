@@ -94,7 +94,7 @@
 |----|-------|-----------------|-----------------|-----------------|-------|
 | 3.2.1 | Ensayos Hidráulicos Integrados | 16 · 40 · 88 | 20 · 36 · 50 | 12 · 20 · 36 | Circulación + presión + estanqueidad del sistema integrado completo |
 | 3.2.2 | Ensayos Térmicos Integrados | 16 · 40 · 88 | 12 · 24 · 48 | 12 · 20 · 36 | Validar temperatura 37–38°C (lagomorfos). Estabilidad ±0.5°C |
-| 3.2.3 | Simulación Circulación Continua 24hs | 24 · 64 · 160 | 16 · 24 · 36 | 16 · 24 · 40 | Operación continua todos subsistemas + monitoreo + resolución incidentes (SG-S6) |
+| 3.2.3 | Simulación Circulación Continua 24hs | 24 · 50 · 100 | 24 · 36 · 46 | 24 · 38 · 60 | Operación continua todos subsistemas + monitoreo + resolución incidentes (SG-S6) |
 | 3.2.4 | Informe Final de Resultados | 20 · 48 · 96 | 16 · 24 · 40 | 16 · 28 · 48 | Conclusiones + desviaciones + recomendaciones. Documento formal con análisis |
 
 ### 3.3 Control de Calidad Final
