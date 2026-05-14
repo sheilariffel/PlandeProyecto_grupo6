@@ -284,7 +284,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
   <div class="stats">
     <div class="stat"><div class="stat-val">1554</div><div class="stat-lbl">hs / persona</div></div>
     <div class="divider"></div>
-    <div class="stat"><div class="stat-val">144</div><div class="stat-lbl">días hábiles</div></div>
+    <div class="stat"><div class="stat-val">164</div><div class="stat-lbl">días hábiles</div></div>
     <div class="divider"></div>
     <div class="stat"><div class="stat-val" id="weeksVal">—</div><div class="stat-lbl">semanas</div></div>
     <div class="divider"></div>
@@ -321,7 +321,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
 
 <script>
 const PPD = 7; // pixels per day
-const TOTAL = 145;
+const TOTAL = 166; // 164 días hábiles + margen
 const CHART_W = TOTAL * PPD;
 
 const PC = { 1: '#388bfd', 2: '#3fb950', 3: '#f78166', 4: '#d2a8ff' };
@@ -376,38 +376,38 @@ const ITEMS = [
   {T:'task', id:'2.1.3', name:'Bioimpresión con Hidrogeles/Biomateriales',      ph:2, gr:'2.1', s:63, e:74, te:92.2, σ:15.56,v:241.98, risk:true},
   {T:'task', id:'2.1.4', name:'Pruebas de Estanqueidad y Resistencia',          ph:2, gr:'2.1', s:75, e:79, te:36.0, σ:8.22, v:67.60},
   {T:'group', gr:'2.2', ph:2},
-  {T:'task', id:'2.2.1', name:'Diseñar y Ensamblar Módulo de Bombeo',           ph:2, gr:'2.2', s:55, e:66, te:88.4, σ:16.00,v:256.00},
-  {T:'task', id:'2.2.2', name:'Sistema de Hematosis Artificial',                ph:2, gr:'2.2', s:67, e:82, te:126.0,σ:23.33,v:544.44, risk:true},
-  {T:'task', id:'2.2.3', name:'Módulo de Filtrado y Diálisis',                  ph:2, gr:'2.2', s:83, e:91, te:70.6, σ:13.22,v:174.83},
-  {T:'task', id:'2.2.4', name:'Sistema de Inyección de Nutrientes/Hormonas',    ph:2, gr:'2.2', s:92, e:96, te:38.8, σ:7.89, v:62.23},
+  {T:'task', id:'2.2.1', name:'Diseñar y Ensamblar Módulo de Bombeo',           ph:2, gr:'2.2', s:75, e:86, te:88.4, σ:16.00,v:256.00},
+  {T:'task', id:'2.2.2', name:'Sistema de Hematosis Artificial',                ph:2, gr:'2.2', s:87, e:102, te:126.0,σ:23.33,v:544.44, risk:true},
+  {T:'task', id:'2.2.3', name:'Módulo de Filtrado y Diálisis',                  ph:2, gr:'2.2', s:103, e:111, te:70.6, σ:13.22,v:174.83},
+  {T:'task', id:'2.2.4', name:'Sistema de Inyección de Nutrientes/Hormonas',    ph:2, gr:'2.2', s:112, e:116, te:38.8, σ:7.89, v:62.23},
   {T:'group', gr:'2.3', ph:2},
-  {T:'task', id:'2.3.1', name:'Integración Matriz de Sensores (P/T/pH/Vol)',    ph:2, gr:'2.3', s:55, e:63, te:65.3, σ:12.67,v:160.44},
-  {T:'task', id:'2.3.2', name:'Interfaz de Usuario (Dashboard)',                ph:2, gr:'2.3', s:64, e:74, te:87.2, σ:15.22,v:231.72},
-  {T:'task', id:'2.3.3', name:'Sistema de Almacenamiento y Registro de Datos',  ph:2, gr:'2.3', s:75, e:80, te:45.8, σ:9.11, v:83.01},
-  {T:'task', id:'2.3.4', name:'Módulo de Estimulación',                         ph:2, gr:'2.3', s:81, e:85, te:39.3, σ:7.78, v:60.49},
+  {T:'task', id:'2.3.1', name:'Integración Matriz de Sensores (P/T/pH/Vol)',    ph:2, gr:'2.3', s:63, e:71, te:65.3, σ:12.67,v:160.44},
+  {T:'task', id:'2.3.2', name:'Interfaz de Usuario (Dashboard)',                ph:2, gr:'2.3', s:72, e:82, te:87.2, σ:15.22,v:231.72},
+  {T:'task', id:'2.3.3', name:'Sistema de Almacenamiento y Registro de Datos',  ph:2, gr:'2.3', s:83, e:88, te:45.8, σ:9.11, v:83.01},
+  {T:'task', id:'2.3.4', name:'Módulo de Estimulación',                         ph:2, gr:'2.3', s:89, e:93, te:39.3, σ:7.78, v:60.49},
   // ── FASE 3 ─────────────────────────────────────────────
   {T:'phase', ph:3},
   {T:'group', gr:'3.1', ph:3},
-  {T:'task', id:'3.1.1', name:'Ensamblaje del Prototipo Físico Completo',       ph:3, gr:'3.1', s:97,  e:105, te:68.1, σ:12.78,v:163.27},
-  {T:'task', id:'3.1.2', name:'Acoplamiento de Sensores al Dashboard',          ph:3, gr:'3.1', s:106, e:110, te:35.6, σ:8.00, v:64.00},
-  {T:'task', id:'3.1.3', name:'Calibración del Sistema Completo',               ph:3, gr:'3.1', s:111, e:117, te:49.9, σ:10.78,v:116.16},
+  {T:'task', id:'3.1.1', name:'Ensamblaje del Prototipo Físico Completo',       ph:3, gr:'3.1', s:117, e:125, te:68.1, σ:12.78,v:163.27},
+  {T:'task', id:'3.1.2', name:'Acoplamiento de Sensores al Dashboard',          ph:3, gr:'3.1', s:126, e:130, te:35.6, σ:8.00, v:64.00},
+  {T:'task', id:'3.1.3', name:'Calibración del Sistema Completo',               ph:3, gr:'3.1', s:131, e:137, te:49.9, σ:10.78,v:116.16},
   {T:'group', gr:'3.2', ph:3},
-  {T:'task', id:'3.2.1', name:'Ensayos Hidráulicos Integrados',                 ph:3, gr:'3.2', s:118, e:122, te:33.7, σ:7.00, v:49.00},
-  {T:'task', id:'3.2.2', name:'Ensayos Térmicos Integrados',                    ph:3, gr:'3.2', s:118, e:121, te:30.4, σ:7.33, v:53.78},
-  {T:'task', id:'3.2.3', name:'Simulación Circulación Continua 24hs',           ph:3, gr:'3.2', s:123, e:128, te:41.1, σ:10.00,v:100.00},
-  {T:'task', id:'3.2.4', name:'Informe Final de Resultados y Conclusiones',     ph:3, gr:'3.2', s:129, e:133, te:35.3, σ:7.33, v:53.78},
+  {T:'task', id:'3.2.1', name:'Ensayos Hidráulicos Integrados',                 ph:3, gr:'3.2', s:138, e:142, te:33.7, σ:7.00, v:49.00},
+  {T:'task', id:'3.2.2', name:'Ensayos Térmicos Integrados',                    ph:3, gr:'3.2', s:138, e:141, te:30.4, σ:7.33, v:53.78},
+  {T:'task', id:'3.2.3', name:'Simulación Circulación Continua 24hs',           ph:3, gr:'3.2', s:143, e:148, te:41.1, σ:10.00,v:100.00},
+  {T:'task', id:'3.2.4', name:'Informe Final de Resultados y Conclusiones',     ph:3, gr:'3.2', s:149, e:153, te:35.3, σ:7.33, v:53.78},
   {T:'group', gr:'3.3', ph:3},
-  {T:'task', id:'3.3.1', name:'Entrega a Tercero para Validación (Normativa)',  ph:3, gr:'3.3', s:134, e:135, te:8.4,  σ:1.78, v:3.16},
+  {T:'task', id:'3.3.1', name:'Entrega a Tercero para Validación (Normativa)',  ph:3, gr:'3.3', s:154, e:155, te:8.4,  σ:1.78, v:3.16},
   // ── FASE 4 ─────────────────────────────────────────────
   {T:'phase', ph:4},
   {T:'group', gr:'4.1', ph:4},
-  {T:'task', id:'4.1.1', name:'Actualizar Planos Finales As-Built',             ph:4, gr:'4.1', s:136, e:138, te:23.8, σ:4.67, v:21.78},
-  {T:'task', id:'4.1.2', name:'Elaborar Fichas Técnicas',                       ph:4, gr:'4.1', s:136, e:138, te:22.3, σ:4.33, v:18.78},
-  {T:'task', id:'4.1.3', name:'Compilar Log de Decisiones',                     ph:4, gr:'4.1', s:136, e:137, te:13.6, σ:2.67, v:7.11},
-  {T:'task', id:'4.1.4', name:'Redactar Manual de Usuario',                     ph:4, gr:'4.1', s:136, e:140, te:35.9, σ:6.78, v:45.94},
+  {T:'task', id:'4.1.1', name:'Actualizar Planos Finales As-Built',             ph:4, gr:'4.1', s:156, e:158, te:23.8, σ:4.67, v:21.78},
+  {T:'task', id:'4.1.2', name:'Elaborar Fichas Técnicas',                       ph:4, gr:'4.1', s:156, e:158, te:22.3, σ:4.33, v:18.78},
+  {T:'task', id:'4.1.3', name:'Compilar Log de Decisiones',                     ph:4, gr:'4.1', s:156, e:157, te:13.6, σ:2.67, v:7.11},
+  {T:'task', id:'4.1.4', name:'Redactar Manual de Usuario',                     ph:4, gr:'4.1', s:156, e:160, te:35.9, σ:6.78, v:45.94},
   {T:'group', gr:'4.2', ph:4},
-  {T:'task', id:'4.2.1', name:'Reunión de Cierre',                              ph:4, gr:'4.2', s:141, e:141, te:5.4,  σ:1.00, v:1.00},
-  {T:'task', id:'4.2.2', name:'Presentación Final a Institución de Conservación',ph:4,gr:'4.2', s:142, e:144, te:18.7, σ:1.78, v:3.16},
+  {T:'task', id:'4.2.1', name:'Reunión de Cierre',                              ph:4, gr:'4.2', s:161, e:161, te:5.4,  σ:1.00, v:1.00},
+  {T:'task', id:'4.2.2', name:'Presentación Final a Institución de Conservación',ph:4,gr:'4.2', s:162, e:164, te:18.7, σ:1.78, v:3.16},
 ];
 
 const dx = d => (d - 1) * PPD;
@@ -416,7 +416,7 @@ const dx = d => (d - 1) * PPD;
 function buildTimeline() {
   const h = document.getElementById('tlHdr');
   h.style.width = CHART_W + 'px';
-  const months = ['Mes 1','Mes 2','Mes 3','Mes 4','Mes 5','Mes 6','Mes 7'];
+  const months = ['Mes 1','Mes 2','Mes 3','Mes 4','Mes 5','Mes 6','Mes 7','Mes 8'];
   months.forEach((m, i) => {
     const day = i * 22 + 1;
     if (day > TOTAL) return;
@@ -568,7 +568,7 @@ const chart = document.getElementById('chart');
 chart.addEventListener('scroll', () => { lblBody.scrollTop = chart.scrollTop; });
 
 // ── Weeks display ────────────────────────────────────────
-document.getElementById('weeksVal').textContent = Math.ceil(144/5);
+document.getElementById('weeksVal').textContent = Math.ceil(164/5);
 
 // ── Init ─────────────────────────────────────────────────
 buildTimeline();
