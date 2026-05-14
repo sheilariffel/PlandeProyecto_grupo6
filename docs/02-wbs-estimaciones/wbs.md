@@ -48,6 +48,8 @@ mindmap
         3.2.2 Ensayos térmicos
         3.2.3 Prueba integrada 24hs
         3.2.4 Informe de resultados
+        3.2.5 Entrega a tercero para control de calidad
+        3.2.6 Obtención de aprobación del control de calidad
 
     4. Cierre y transferencia
       4.1 Documentación final
@@ -155,8 +157,8 @@ mindmap
 | 3.2.2 | Ensayos térmicos integrados | Informe Térmico |
 | 3.2.3 | Simulación de circulación continua *(Prueba 24hs)* | Informe de Simulación |
 | 3.2.4 | Informe final de resultados y conclusiones | Informe Final |
-| 3.2.4 | Entrega a tercero para control de calidad | Informe Final |
-| 3.2.5 | Obtención de aprobación del control de calidad | Validación externa |
+| 3.2.5 | Entrega a tercero para control de calidad | Informe |
+| 3.2.6 | Obtención de aprobación del control de calidad | Validación externa |
 
 ---
 
