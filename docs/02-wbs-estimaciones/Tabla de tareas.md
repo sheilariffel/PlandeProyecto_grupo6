@@ -1,6 +1,4 @@
-# 📅 Cronograma del Proyecto
-
-## Tabla de tareas
+# Tabla de tareas
 
 | **ID** | **Tarea** | **Predecesoras** | **Responsable** | **Duración (días)** | **Inicio Estimado** | **Hito** |
 |--------|-----------|-----------------|-----------------|:-------------------:|--------------------:|:--------:|
