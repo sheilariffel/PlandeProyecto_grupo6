@@ -155,12 +155,8 @@ mindmap
 | 3.2.2 | Ensayos térmicos integrados | Informe Térmico |
 | 3.2.3 | Simulación de circulación continua *(Prueba 24hs)* | Informe de Simulación |
 | 3.2.4 | Informe final de resultados y conclusiones | Informe Final |
-
-### 3.3 Control de Calidad Final
-
-| ID | Tarea | Entregable |
-|----|-------|-----------|
-| 3.3.1 | Entrega a tercero para validación final y aprobación normativa *(tercerizada)* | Validación Externa |
+| 3.2.4 | Entrega a tercero para control de calidad | Informe Final |
+| 3.2.5 | Obtención de aprobación del control de calidad | Validación externa |
 
 ---
 
