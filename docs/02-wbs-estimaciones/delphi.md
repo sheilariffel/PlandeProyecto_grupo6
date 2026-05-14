@@ -1,87 +1,123 @@
-# 🎲 Estimación Delphi
+# 📐 PERT + Delphi — Estimación de Esfuerzo
+### Útero Artificial Ectogénico · Proyecto BioTech
 
-> **Técnica:** Delphi · **Rondas realizadas:** 2 · **Estimadores:** Bioingeniero (E1), Biotecnólogo (E2), Esp. Materiales (E3)
-## Ronda 1
-| ID    | Tarea                              | E1 (hs) | E2 (hs) | E3 (hs) | Promedio | Delta |
-| ----- | ---------------------------------- | ------- | ------- | ------- | -------- | ----- |
-| 1.1.5 | Investigación bibliográfica        | 140     | 160     | 150     | 150      | 20    |
-| 1.2.3 | Aprobación institucional (gestión) | 80      | 100     | 90      | 90       | 20    |
-| 2.0.1 | Investigación biomateriales        | 200     | 240     | 220     | 220      | 40    |
-| 2.0.2 | Pruebas biocompatibilidad          | 140     | 160     | 150     | 150      | 20    |
-| 2.1.2 | Bioimpresión v1                    | 80      | 96      | 88      | 88       | 16    |
-| 2.1.4 | Rediseño v2                        | 64      | 80      | 72      | 72       | 16    |
-| 2.1.5 | Bioimpresión v2                    | 80      | 96      | 88      | 88       | 16    |
-| 2.2.1 | Diseño bombeo v1                   | 140     | 160     | 150     | 150      | 20    |
-| 2.2.7 | Investigación hematosis            | 180     | 200     | 190     | 190      | 20    |
-| 2.2.8 | Diseño oxigenador                  | 140     | 160     | 150     | 150      | 20    |
-| 2.4.6 | Dashboard v1                       | 200     | 240     | 220     | 220      | 40    |
-| 3.1.5 | Resolución problemas integración   | 140     | 160     | 150     | 150      | 20    |
-| 4.1.4 | Documentación científica           | 140     | 160     | 150     | 150      | 20    |
-| **TOTAL** | | | | | **[COMPLETAR]** | |
-
-> **Delta:** diferencia entre la estimación máxima y mínima de la ronda. Si Delta > [umbral definido por el grupo], se discute y se realiza la ronda 2.
-
-## Discusión entre rondas
-Investigación de biomateriales (2.0.1):
-
-E1: "Necesitamos probar al menos 5-6 hidrogeles diferentes, cada uno requiere caracterización" (200hs)
-E2: "Más las pruebas de resistencia mecánica, degradación, esterilización" (240hs)
-E3: "Y hay que documentar todo para el comité de ética" (220hs)
-
-Consenso: Es trabajo de laboratorio intensivo, ir con estimación conservadora.
-Dashboard (2.4.6):
-
-E2: "Es solo una interfaz web con gráficos" (240hs)
-E1: "No, tiene que manejar 4 sensores en tiempo real, alarmas, registro en BD" (200hs)
-E3: "Y funcionar sin crashes durante pruebas de 48hs continuas" (220hs)
-
-
-## Ronda 2
-
-| ID                | Tarea                              | E1 (hs) | E2 (hs) | E3 (hs) | Promedio    | Delta            |
-| ----------------- | ---------------------------------- | ------- | ------- | ------- | ----------- | ---------------- |
-| 1.1.5             | Investigación bibliográfica        | 140     | 160     | 150     | 150         | 20               |
-| 1.2.3             | Aprobación institucional (gestión) | 80      | 100     | 90      | 90          | 20               |
-| 2.0.1             | Investigación biomateriales        | 200     | 240     | 220     | 220         | 40               |
-| 2.0.2             | Pruebas biocompatibilidad          | 140     | 160     | 150     | 150         | 20               |
-| 2.1.2             | Bioimpresión v1                    | 80      | 96      | 88      | 88          | 16               |
-| 2.1.4             | Rediseño v2                        | 64      | 80      | 72      | 72          | 16               |
-| 2.1.5             | Bioimpresión v2                    | 80      | 96      | 88      | 88          | 16               |
-| 2.2.1             | Diseño bombeo v1                   | 140     | 160     | 150     | 150         | 20               |
-| 2.2.7             | Investigación hematosis            | 180     | 200     | 190     | 190         | 20               |
-| 2.2.8             | Diseño oxigenador                  | 140     | 160     | 150     | 150         | 20               |
-| 2.4.6             | Dashboard v1                       | 200     | 240     | 220     | 220         | 40               |
-| 3.1.5             | Resolución problemas integración   | 140     | 160     | 150     | 150         | 20               |
-| 4.1.4             | Documentación científica           | 140     | 160     | 150     | 150         | 20               |
-| ID                | Tarea                              | E1 (hs) | E2 (hs) | E3 (hs) | Promedio R2 | Estimación Final |
-| 1.1.5             | Investigación bibliográfica        | 145     | 155     | 150     | 150         | **150 hs**       |
-| 1.2.3             | Aprobación institucional           | 85      | 95      | 90      | 90          | **90 hs**        |
-| 2.0.1             | Investigación biomateriales        | 210     | 230     | 220     | 220         | **220 hs**       |
-| 2.0.2             | Pruebas biocompatibilidad          | 145     | 155     | 150     | 150         | **150 hs**       |
-| 2.1.2             | Bioimpresión v1                    | 84      | 92      | 88      | 88          | **90 hs**        |
-| 2.1.5             | Bioimpresión v2                    | 84      | 92      | 88      | 88          | **90 hs**        |
-| 2.2.7             | Investigación hematosis            | 185     | 195     | 190     | 190         | **190 hs**       |
-| 2.4.6             | Dashboard v1                       | 210     | 230     | 220     | 220         | **220 hs**       |
-| 3.1.5             | Resolución problemas               | 145     | 155     | 150     | 150         | **150 hs**       |
-| 4.1.4             | Documentación científica           | 145     | 155     | 150     | 150         | **150 hs**       |
-| **TOTAL CRÍTICO** |                                    |         |         |         |             | **~1500 hs**     |
-
-## Conversión a duración
-
-| ID                | Tarea                              | Esfuerzo | Recursos          | Dedicación     | Duración       |
-| ----------------- | ---------------------------------- | -------- | ----------------- | -------------- | -------------- |
-| 1.1.5             | Invest. bibliográfica              | 150hs    | Biotecnólogo (1)  | 75%            | **25 días**    |
-| 1.2.3             | Aprobación ética                   | 90hs     | Director (1)      | 30% (trámites) | **30 días**   |
-| 2.0.1             | Invest. biomateriales              | 220hs    | Esp. Mat (1)      | 90%            | **30 días**    |
-| 2.0.2             | Pruebas biocompat.                 | 150hs    | Esp. Mat (1)      | 90%            | **20 días**    |
-| 2.1.2             | Bioimpresión v1                    | 90hs     | Esp. Mat (1)      | 80%            | **12 días**    |
-| 2.2.7             | Invest. hematosis                  | 190hs    | Biotec (1)        | 90%            | **25 días**    |
-| 2.4.6             | Dashboard v1                       | 220hs    | Desarrollador (1) | 90%            | **30 días**    |
-| 3.1.5             | Resolución problemas               | 150hs    | Equipo (3)        | 75%            | **20 días**  |
-| 4.1.4             | Doc. científica                    | 150hs    | Biotec (1)        | 90%            | **20 días**    |
-
-> **Fórmula:** Duración = Esfuerzo / (Recursos × Dedicación × Hs/día)
+> **Método:** Delphi con 3 expertos → promedio de O/M/P → fórmula PERT  
+> **Unidad:** Horas / Persona  
+> **O** = Optimista · **M** = Más probable · **P** = Pesimista
 
 ---
 
+##  Fórmulas
+
+| Magnitud | Fórmula | Descripción |
+|----------|---------|-------------|
+| **TE** | `(O + 4·M + P) / 6` | Tiempo Esperado ponderado |
+| **σ** | `(P − O) / 6` | Desvío estándar (incertidumbre) |
+| **Varianza** | `σ²` | Dispersión cuadrática |
+| **σ_proyecto** | `√(Σ Varianzas)` | Incertidumbre total del proyecto |
+
+---
+
+##  Formulario Delphi — Estimaciones por Experto
+
+> Valores en **Horas / Persona**
+
+### 1.1 Gestión del Proyecto
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 1.1.1 | Acta de Constitución | 4 · 8 · 16 | 6 · 10 · 16 | 6 · 10 · 18 | Doc formal ~5 pág: objetivos, alcance, sponsor, autoridad PM, exclusiones bioéticas |
+| 1.1.2 | Plan de Gestión del Proyecto | 16 · 32 · 60 | 16 · 24 · 40 | 24 · 40 · 72 | Doc maestro: alcance + cronograma + costos + calidad + riesgos + comunicaciones |
+| 1.1.3 | Registro y Estrategia de Stakeholders | 6 · 12 · 20 | 4 · 8 · 12 | 6 · 12 · 20 | ~6 stakeholders: BioTech, Conservación, Ética, Proveedores, equipo interno |
+| 1.1.4 | Registro de Riesgos Inicial | 8 · 20 · 40 | 4 · 8 · 12 | 8 · 16 · 28 | Riesgos técnicos + regulatorios + financieros + bioseguridad |
+| 1.1.5 | Diagramado de Presupuesto | 10 · 24 · 48 | 8 · 12 · 20 | 12 · 20 · 36 | Costear biomateriales + electrónica + bioimpresión + horas lab + personal |
+| 1.1.6 | Contratos con Proveedores | 16 · 40 · 80 | 20 · 32 · 60 | 20 · 40 · 72 | Múltiples proveedores (hidrogeles, sensores, bomba, oxigenador). Búsqueda + cotización + revisión |
+| 1.1.7 | Reunión de Kick Off | 2 · 4 · 8 | 2 · 4 · 6 | 4 · 6 · 12 | Prep + coordinar asistentes + reunión + minuta |
+
+### 1.2 Expediente Bioético y Normativo
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 1.2.1 | Documentación Comité de Ética | 24 · 56 · 120 | 16 · 24 · 48 | 24 · 40 · 72 | Expediente formal: protocolo experimental + consideraciones bioéticas + restricciones ectogénesis |
+| 1.2.2 | Análisis Implicancias y Restricciones | 20 · 40 · 80 | 8 · 12 · 20 | 16 · 28 · 48 | Investigación legal/bioética (normativa Arg + internacional) |
+| 1.2.3 | Etapa de Revisión | 16 · 40 · 96 | 8 · 12 · 30 | 8 · 16 · 28 | Revisiones internas + ajustes + iteraciones antes de envío externo |
+| 1.2.4 | Envío al Organismo de Ética | 2 · 6 · 12 | 1 · 2 · 3 | 2 · 8 · 16 | Preparar expediente + validar + enviar |
+| 1.2.5 | ⬧ Aprobación CICUAL *(HITO)* | 0 · 0 · 0 | 0 · 0 · 0 | 0 · 0 · 0 | **HITO DE AVANCE** — trámite externo ~30–45 días calendario. No computable como esfuerzo |
+
+### 1.3 Definición Técnica de Subsistemas
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 1.3.1 | Especificaciones Fisiológicas (Lagomorfos) | 24 · 48 · 96 | 12 · 24 · 36 | 20 · 36 · 56 | Investigar fisiología O. cuniculus: presión, temperatura, pH, flujos sanguíneos |
+| 1.3.2 | Matriz de Escalabilidad | 12 · 24 · 48 | 10 · 14 · 20 | 12 · 20 · 36 | Tabla S/M/L especies + fórmulas de conversión paramétrica |
+| 1.3.3 | Diseño Funcional del Sistema | 24 · 56 · 120 | 16 · 24 · 40 | 24 · 40 · 72 | Arquitectura modular completa: diagrama de bloques + subsistemas + interfaces |
+| 1.3.4 | Diagramas de Flujo del Sistema | 12 · 28 · 56 | 8 · 14 · 24 | 16 · 28 · 48 | Diagramas P&ID: circulación, oxigenación, diálisis, inyección de nutrientes |
+
+### 2.1 Receptáculo Uterino
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 2.1.1 | Compra de Materiales *(tercerizada)* | 8 · 20 · 48 | — | 8 · 16 · 32 | Solo esfuerzo admin (cotizar, validar specs, coordinar entrega) |
+| 2.1.2 | Modelado CAD del Habitáculo | 32 · 72 · 140 | 24 · 32 · 48 | 40 · 64 · 100 | Diseño 3D receptáculo escala lagomorfa (200–400 ml) |
+| 2.1.3 | ⚠ Bioimpresión con Hidrogeles | 40 · 95 · 140 | 40 · 80 · 120 | 60 · 100 · 160 | **ALTO RIESGO**: preparar biomateriales + calibrar + imprimir + probar + iterar |
+| 2.1.4 | Pruebas de Estanqueidad | 16 · 40 · 88 | 14 · 24 · 50 | 20 · 36 · 60 | Banco ensayo + medir a presión nominal + corregir fugas + repetir (Stage-Gate S1) |
+
+### 2.2 Circuitos de Soporte Vital
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 2.2.1 | Módulo de Bombeo | 40 · 88 · 180 | 48 · 64 · 96 | 60 · 100 · 160 | Bomba peristáltica: diseño circuito cerrado + ensamblaje + pruebas circulación 24hs (SG-S2) |
+| 2.2.2 | ⚠ Sistema de Hematosis Artificial | 64 · 140 · 300 | 60 · 90 · 124 | 80 · 130 · 200 | **TAREA MÁS COMPLEJA**: oxigenadores de membrana + integrar O₂/CO₂ + ensayos (SG-S3) |
+| 2.2.3 | Módulo de Filtrado y Diálisis | 32 · 72 · 150 | 44 · 56 · 84 | 40 · 72 · 120 | Remoción desechos metabólicos + integrar componentes + ajustar umbral (SG-S4) |
+| 2.2.4 | Sistema de Inyección | 16 · 40 · 84 | 12 · 20 · 36 | 30 · 50 · 80 | Bomba infusión controlada: nutrientes/hormonas. Validar flujo regulable |
+
+### 2.3 Electrónica y Control
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 2.3.1 | Integración Matriz de Sensores | 32 · 72 · 144 | 30 · 50 · 86 | 40 · 64 · 100 | 4 sensores (P/T/pH/Vol) funcionando simultáneamente + selección + montaje + verificación |
+| 2.3.2 | Dashboard (Interfaz de Usuario) | 40 · 96 · 180 | 32 · 62 · 66 | 60 · 100 · 160 | UI tiempo real: 4 variables + alarmas + gráficos históricos. Sin crashes en prueba 24hs |
+| 2.3.3 | Sistema de Almacenamiento de Datos | 24 · 56 · 120 | 22 · 34 · 50 | 24 · 40 · 64 | BD persistente. Registro sin pérdidas 24hs (SG-S5) |
+| 2.3.4 | Módulo de Estimulación | 20 · 48 · 100 | 20 · 28 · 40 | 20 · 36 · 60 | Presión mecánica + emisión acústica en habitáculo |
+
+### 3.1 Integración Mecánica y Electrónica
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 3.1.1 | Ensamblaje Prototipo Físico Completo | 40 · 88 · 180 | 40 · 56 · 80 | 30 · 50 · 80 | Integración TODOS los subsistemas. Depende de que todos estén listos |
+| 3.1.2 | Acoplamiento Sensores-Dashboard | 20 · 48 · 96 | 12 · 24 · 48 | 16 · 28 · 48 | Conexión eléctrica + calibración + lectura coherente de 4 variables |
+| 3.1.3 | Calibración del Sistema | 32 · 72 · 150 | 20 · 32 · 56 | 20 · 36 · 60 | Ajuste fino ±5% a rangos fisiológicos lagomorfos. Iterativo hasta estabilizar |
+
+### 3.2 Protocolo de Pruebas de Sistema
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 3.2.1 | Ensayos Hidráulicos Integrados | 16 · 40 · 88 | 20 · 36 · 50 | 12 · 20 · 36 | Circulación + presión + estanqueidad del sistema integrado completo |
+| 3.2.2 | Ensayos Térmicos Integrados | 16 · 40 · 88 | 12 · 24 · 48 | 12 · 20 · 36 | Validar temperatura 37–38°C (lagomorfos). Estabilidad ±0.5°C |
+| 3.2.3 | Simulación Circulación Continua 24hs | 24 · 64 · 160 | 16 · 24 · 36 | 16 · 24 · 40 | Operación continua todos subsistemas + monitoreo + resolución incidentes (SG-S6) |
+| 3.2.4 | Informe Final de Resultados | 20 · 48 · 96 | 16 · 24 · 40 | 16 · 28 · 48 | Conclusiones + desviaciones + recomendaciones. Documento formal con análisis |
+
+### 3.3 Control de Calidad Final
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 3.3.1 | Entrega a Tercero *(tercerizada)* | 4 · 8 · 16 | 4 · 8 · 12 | 4 · 8 · 16 | Solo esfuerzo admin: preparar envío + coordinar + recibir resultado |
+
+### 4.1 Documentación Técnica "As-Built"
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 4.1.1 | Planos Finales As-Built | 12 · 24 · 48 | 8 · 16 · 24 | 16 · 28 · 48 | Planos CAD actualizados reflejando modificaciones reales del prototipo |
+| 4.1.2 | Fichas Técnicas | 12 · 28 · 56 | 10 · 16 · 20 | 12 · 20 · 36 | Specs biomateriales + componentes electrónicos + parámetros operativos |
+| 4.1.3 | Log de Decisiones | 8 · 16 · 32 | 6 · 10 · 18 | 8 · 12 · 20 | Compilar registro de cambios + justificaciones + lecciones aprendidas |
+| 4.1.4 | Manual de Usuario | 20 · 40 · 84 | 18 · 26 · 40 | 20 · 36 · 56 | Operación: puesta en marcha, monitoreo, mantenimiento, troubleshooting |
+
+### 4.2 Marketing y Licenciamiento
+
+| ID | Tarea | Experto 1 O·M·P | Experto 2 O·M·P | Experto 3 O·M·P | Notas |
+|----|-------|-----------------|-----------------|-----------------|-------|
+| 4.2.1 | Reunión de Cierre | 2 · 4 · 8 | 2 · 4 · 6 | 4 · 8 · 12 | Prep + reunión con sponsor/equipo + acta de cierre + lecciones aprendidas |
+| 4.2.2 | Presentación Final a Institución | 12 · 18 · 24 | 12 · 18 · 24 | 16 · 20 · 24 | Demo en vivo del prototipo + pitch deck + one-pager |
+
+---
 *Cátedra Gestión de Proyectos · FIUNER · 2026*
