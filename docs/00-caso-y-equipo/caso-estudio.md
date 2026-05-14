@@ -1,4 +1,4 @@
-# 📖 Caso de Estudio
+# 🐇 Caso de Estudio
 
 ## Nombre del proyecto
 
