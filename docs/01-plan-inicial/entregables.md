@@ -37,12 +37,11 @@ mindmap
 
 | # | Entregable | Descripción | Responsable | Criterio de aceptación |
 |---|-----------|-------------|------------|------------------------|
-| 1 | Prototipo físico ensamblado | Receptáculo uterino bioimpreso integrado al circuito de soporte vital (bombeo, oxigenación, diálisis). | Bioingeniero / Esp. Materiales / Lic. Diseño Industrial | Superación Stage-Gates S1–S4: estanqueidad, circulación 24 hs, transferencia gaseosa y filtrado verificados. |
+| 1 | Expediente bioético | Documentación formal sobre implicancias bioéticas, restricciones de uso y marco normativo aplicable. | Director del Proyecto / Biotecnólogo | Expediente presentado y aprobación institucional obtenida (CICUAL) para la superación del Stage-Gate 1. |
 | 2 | Sistema electrónico (Dashboard) | Sistema de sensores con interfaz de usuario para visualización y registro de datos en tiempo real. | Bioingeniero (electrónica) / Desarrollador de Software | Stage-Gate S5: lectura estable y simultánea de presión, temperatura, pH y volumen; almacenamiento de datos sin errores. |
-| 3 | Documentación técnica | Diagramas, planos CAD As-Built, fichas técnicas de biomateriales, log de decisiones y manual de usuario. | Director de Proyecto / Biotecnólogo / Bioingeniero | Documentación completa aprobada que refleja el estado final as-built del prototipo, incluyendo manual de usuario. |
+| 3 | Prototipo físico ensamblado | Receptáculo uterino bioimpreso integrado al circuito de soporte vital (bombeo, oxigenación, diálisis). | Bioingeniero / Esp. Materiales / Lic. Diseño Industrial | Superación Stage-Gates S1–S4: estanqueidad, circulación 24 hs, transferencia gaseosa y filtrado verificados. |
 | 4 | Protocolo de pruebas | Procedimientos de ensayo hidráulico y térmico ejecutados con resultados, conclusiones y firma de responsables. | Biotecnólogo / Técnico de Laboratorio / Bioingeniero | Protocolo firmado con resultados dentro de los rangos fisiológicos definidos para la prueba de concepto con lagomorfos. |
-| 5 | Expediente bioético | Documentación formal sobre implicancias bioéticas, restricciones de uso y marco normativo aplicable. | Director del Proyecto / Biotecnólogo | Expediente presentado y aprobación institucional obtenida (CICUAL) para la superación del Stage-Gate 1. |
-
+| 5 | Documentación técnica | Diagramas, planos CAD As-Built, fichas técnicas de biomateriales, log de decisiones y manual de usuario. | Director de Proyecto / Biotecnólogo / Bioingeniero | Documentación completa aprobada que refleja el estado final as-built del prototipo, incluyendo manual de usuario. |
 ## Exclusiones del alcance
 
 > A continuación se listan explícitamente los elementos que quedan fuera del alcance del proyecto, con el objetivo de prevenir desviaciones, gestionar expectativas de los stakeholders y evitar ambigüedades durante la ejecución:
