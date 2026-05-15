@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red AON + Camino Crítico — Útero Artificial Ectogénico</title>
+<style>
+:root {
+  --bg:#0d1117; --surf:#161b22; --surf2:#21262d; --brd:#30363d;
+  --txt:#e6edf3; --mut:#8b949e;
+  --crit:#f85149; --near:#ffa657;
+  --p1:#388bfd; --p2:#3fb950; --p3:#f78166; --p4:#d2a8ff;
+  --edge:#404040;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,sans-serif;overflow:hidden}
+
+/* ── Header ── */
+.hdr{background:var(--surf);border-bottom:1px solid var(--brd);padding:12px 22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hdr-title h1{font-size:15px;font-weight:700;letter-spacing:-.3px}
+.hdr-title p{font-size:10px;color:var(--mut);margin-top:2px;font-family:monospace}
+.controls{display:flex;gap:6px;margin-left:4px}
+.btn{background:var(--surf2);border:1px solid var(--brd);color:var(--mut);padding:4px 12px;border-radius:5px;font-size:11px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--brd);color:var(--txt)}
+.btn.on{background:rgba(248,81,73,.15);color:var(--crit);border-color:rgba(248,81,73,.35)}
+.btn.on2{background:rgba(56,139,253,.12);color:var(--p1);border-color:rgba(56,139,253,.35)}
+.stats{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap;align-items:center}
+.dv{width:1px;height:32px;background:var(--brd)}
+.stat{text-align:center}
+.sv{font-size:18px;font-weight:700;font-family:monospace}
+.sl{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+
+/* ── Legend ── */
+.leg-bar{background:var(--surf);border-bottom:1px solid var(--brd);padding:6px 22px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.li{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--mut)}
+.ls{width:20px;height:3px;border-radius:2px}
+.lb{width:10px;height:10px;border-radius:2px;border:2px solid}
+.schm{font-family:monospace;font-size:9px;background:var(--surf2);border:1px solid var(--brd);border-radius:4px;padding:3px 8px;line-height:1.7;margin-left:auto}
+
+/* ── Canvas ── */
+.wrap{overflow:auto;width:100vw;height:calc(100vh - 88px);cursor:grab;user-select:none}
+.wrap:active{cursor:grabbing}
+svg{display:block}
+
+/* ── Nodes ── */
+.node{cursor:pointer}
+.nbg{transition:filter .15s}
+.node:hover .nbg{filter:brightness(1.22)}
+
+/* ── Tooltip ── */
+.tt{position:fixed;background:var(--surf2);border:1px solid var(--brd);border-radius:8px;padding:11px 14px;font-size:11px;z-index:9999;max-width:280px;box-shadow:0 8px 28px rgba(0,0,0,.65);pointer-events:none;opacity:0;transition:opacity .12s}
+.tt.on{opacity:1}
+.tt-id{font-family:monospace;font-size:9px;color:var(--mut);margin-bottom:2px}
+.tt-name{font-weight:700;font-size:13px;margin-bottom:8px;line-height:1.3}
+.tt-g{display:grid;grid-template-columns:auto auto;gap:2px 14px;font-family:monospace;font-size:10px}
+.tk{color:var(--mut)}.tv{text-align:right}
+.badge{display:inline-block;border-radius:4px;padding:2px 7px;font-size:9px;font-weight:700;margin-top:6px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-title">
+    <h1>🔬 Red AON — Útero Artificial Ectogénico · Análisis CPM</h1>
+    <p>Activity on Node · Forward Pass + Backward Pass · Camino Crítico (Float = 0)</p>
+  </div>
+  <div class="controls">
+    <button class="btn on" id="bAll" onclick="setF('all')">Todas las tareas</button>
+    <button class="btn" id="bCrit" onclick="setF('crit')">Solo críticas</button>
+    <button class="btn on2" id="bPhase" onclick="togglePhase()">Fases ON</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="sv" style="color:var(--crit)">24</div><div class="sl">Tareas críticas</div></div>
+    <div class="dv"></div>
+    <div class="stat"><div class="sv">164</div><div class="sl">Días hábiles</div></div>
+    <div class="dv"></div>
+    <div class="stat"><div class="sv">~8</div><div class="sl">Meses</div></div>
+    <div class="dv"></div>
+    <div class="stat"><div class="sv">44</div><div class="sl">Tareas totales</div></div>
+    <div class="dv"></div>
+    <div class="stat"><div class="sv">2</div><div class="sl">Rutas críticas</div></div>
+  </div>
+</div>
+
+<div class="leg-bar">
+  <span class="li"><span class="lb" style="border-color:var(--crit);background:rgba(248,81,73,.12)"></span>Crítica (Float=0)</span>
+  <span class="li"><span class="lb" style="border-color:var(--near);background:rgba(255,166,87,.1)"></span>Casi crítica (Float≤3)</span>
+  <span class="li"><span class="lb" style="border-color:var(--p1);background:transparent"></span>No crítica</span>
+  <span class="li"><span class="ls" style="background:var(--crit)"></span>Arco crítico</span>
+  <span class="li"><span class="ls" style="background:var(--near)"></span>Arco casi crítico</span>
+  <span class="li"><span class="ls" style="background:var(--edge)"></span>Arco no crítico</span>
+  <span class="li">⬧ Hito</span>
+  <span class="li">⚠ Alto riesgo</span>
+  <div class="schm">ES &nbsp;|&nbsp; DUR &nbsp;|&nbsp; EF<br>LS &nbsp;|&nbsp; <span style="color:var(--crit)">Holgura</span> &nbsp;|&nbsp; LF</div>
+</div>
+
+<div class="wrap" id="wrap">
+  <svg id="net" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+<div class="tt" id="tt"></div>
+
+<script>
+// ══ Layout constants ══════════════════════════════════════
+const NW=132, NH=60, CW=182, RH=102, MX=28, MY=30;
+const nx=c=>MX+c*CW, ny=r=>MY+r*RH;
+const NS='http://www.w3.org/2000/svg';
+const mkEl=(tag,a={})=>{const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(a))e.setAttribute(k,v);return e};
+
+// ══ Phase colors ══════════════════════════════════════════
+const PC={0:'#666',1:'#388bfd',2:'#3fb950',3:'#f78166',4:'#d2a8ff'};
+
+// ══ Node data ═════════════════════════════════════════════
+// [name, dur, ES, EF, LS, LF, float, phase, col, row, te, sigma, risk, milestone]
+const ND={
+  'START': ['INICIO',           0,  0,  0,  0,  0,  0, 0, 0, 4,  0,    0    ],
+  '1.1.1': ['Acta Constitución',2,  1,  2,  1,  2,  0, 1, 1, 4,  9.9,  1.89 ],
+  '1.1.2': ['Plan de Gestión',  5,  3,  7,  3,  7,  0, 1, 2, 3, 34.0,  6.44 ],
+  '1.1.3': ['Stakeholders',     2,  3,  4,  6,  7,  3, 1, 2, 2, 10.9,  2.00 ],
+  '1.1.4': ['Riesgos Iniciales',2,  3,  4,  6,  7,  3, 1, 2, 1, 15.3,  3.33 ],
+  '1.1.5': ['Presupuesto',      3,  3,  5,  5,  7,  2, 1, 2, 5, 19.9,  4.11 ],
+  '1.1.6': ['Contratos Prov.',  5,  3,  7,  3,  7,  0, 1, 2, 6, 39.8,  8.67 ],
+  '1.1.7': ['Kick Off',         1,  8,  8,  8,  8,  0, 1, 3, 4,  5.0,  1.00 ],
+  '1.2.1': ['Doc. Comité Ética',6,  9, 14,  9, 14,  0, 1, 4, 3, 43.6,  9.78 ],
+  '1.2.2': ['Análisis Restric.',4,  9, 12, 11, 14,  2, 1, 4, 2, 28.4,  5.78 ],
+  '1.2.3': ['Etapa Revisión',   4, 15, 18, 15, 18,  0, 1, 5, 3, 25.4,  6.78 ],
+  '1.2.4': ['Envío Ética',      1, 19, 19, 19, 19,  0, 1, 6, 3,  5.6,  1.44 ],
+  '1.2.5': ['HITO:Aprobac.CICUAL',35,20,54,20,54,  0, 1, 7, 3,  0,    0,    false, true],
+  '1.3.1': ['Especif. Fisiol.', 5,  9, 13, 46, 50, 37, 1, 4, 5, 37.6,  7.33 ],
+  '1.3.2': ['Matriz Escal.',    3, 14, 16, 52, 54, 38, 1, 5, 5, 20.6,  3.89 ],
+  '1.3.3': ['Diseño Funcional', 6, 14, 19, 45, 50, 31, 1, 5, 6, 43.1,  9.33 ],
+  '1.3.4': ['Diagramas Flujo',  4, 20, 23, 51, 54, 31, 1, 6, 6, 24.7,  5.11 ],
+  // Fase 2 — nueva dependencia: 2.2.1 arranca después de 2.1.3
+  '2.1.1': ['Compra Materiales',3, 55, 57, 60, 62,  5, 2, 8, 1, 20.0,  5.33 ],
+  '2.1.2': ['Modelado CAD',     8, 55, 62, 55, 62,  0, 2, 8, 2, 58.7, 10.67 ],
+  '2.1.3': ['⚠ Bioimpresión',  12, 63, 74, 63, 74,  0, 2, 9, 2, 92.2, 15.56, true ],
+  '2.1.4': ['Pruebas Estanq.',  5, 75, 79,112,116, 37, 2,10, 2, 36.0,  8.22 ],
+  // 2.2.1 ahora depende de 2.1.3 → empieza día 75
+  '2.2.1': ['Módulo Bombeo',   12, 75, 86, 75, 86,  0, 2,10, 4, 88.4, 16.00 ],
+  '2.2.2': ['⚠ Hematosis',    16, 87,102, 87,102,  0, 2,11, 4,126.0, 23.33, true ],
+  '2.2.3': ['Filtrado-Diálisis',9,103,111,103,111,  0, 2,12, 4, 70.6, 13.22 ],
+  '2.2.4': ['Sist. Inyección',  5,112,116,112,116,  0, 2,13, 4, 38.8,  7.89 ],
+  // 2.3.x arranca después de 2.1.1 (materiales) Y 2.1.2 (CAD) — depende de ambos
+  '2.3.1': ['Matriz Sensores',  9, 63, 71, 86, 94, 23, 2, 9, 6, 65.3, 12.67 ],
+  '2.3.2': ['Dashboard UI',    11, 72, 82, 95,105, 23, 2,10, 6, 87.2, 15.22 ],
+  '2.3.3': ['Almacen. Datos',   6, 83, 88,106,111, 23, 2,11, 6, 45.8,  9.11 ],
+  '2.3.4': ['Módulo Estim.',    5, 89, 93,112,116, 23, 2,12, 6, 39.3,  7.78 ],
+  // Fase 3 — desplazada +20 días (ahora arranca día 117)
+  '3.1.1': ['Ensamblaje Proto.',9,117,125,117,125,  0, 3,14, 4, 68.1, 12.78 ],
+  '3.1.2': ['Acoplam. Sensores',5,126,130,126,130,  0, 3,15, 4, 35.6,  8.00 ],
+  '3.1.3': ['Calibración Sist.',7,131,137,131,137,  0, 3,16, 4, 49.9, 10.78 ],
+  '3.2.1': ['Ensayos Hidraul.', 5,138,142,138,142,  0, 3,17, 3, 33.7,  7.00 ],
+  '3.2.2': ['Ensayos Térmicos', 4,138,141,139,142,  1, 3,17, 5, 30.4,  7.33 ],
+  '3.2.3': ['Simulación 24hs',  6,143,148,143,148,  0, 3,18, 4, 41.1, 10.00 ],
+  '3.2.4': ['Informe Resultados',5,149,153,149,153, 0, 3,19, 4, 35.3,  7.33 ],
+  '3.3.1': ['Valid. Tercero',   2,154,155,154,155,  0, 3,20, 4,  8.4,  1.78 ],
+  // Fase 4 — desplazada +20 días
+  '4.1.1': ['Planos As-Built',  3,156,158,158,160,  2, 4,21, 2, 23.8,  4.67 ],
+  '4.1.2': ['Fichas Técnicas',  3,156,158,158,160,  2, 4,21, 3, 22.3,  4.33 ],
+  '4.1.3': ['Log Decisiones',   2,156,157,159,160,  3, 4,21, 5, 13.6,  2.67 ],
+  '4.1.4': ['Manual Usuario',   5,156,160,156,160,  0, 4,21, 4, 35.9,  6.78 ],
+  '4.2.1': ['Reunión Cierre',   1,161,161,161,161,  0, 4,22, 4,  5.4,  1.00 ],
+  '4.2.2': ['Presentación Final',3,162,164,162,164, 0, 4,23, 4, 18.7,  1.78 ],
+  'END':   ['FIN',              0,164,164,164,164,  0, 0,24, 4,  0,    0    ],
+};
+
+// Accessors
+const nf=(id,i)=>ND[id][i];
+const nName=id=>nf(id,0), nDur=id=>nf(id,1), nES=id=>nf(id,2), nEF=id=>nf(id,3),
+      nLS=id=>nf(id,4),   nLF=id=>nf(id,5),  nFl=id=>nf(id,6),  nPh=id=>nf(id,7),
+      nC=id=>nf(id,8),    nR=id=>nf(id,9),   nTE=id=>nf(id,10), nSig=id=>nf(id,11),
+      nRisk=id=>nf(id,12)===true, nMS=id=>nf(id,13)===true;
+
+// ══ Edges ═════════════════════════════════════════════════
+const EDGES=[
+  ['START','1.1.1'],
+  ['1.1.1','1.1.2'],['1.1.1','1.1.3'],['1.1.1','1.1.4'],['1.1.1','1.1.5'],['1.1.1','1.1.6'],
+  ['1.1.2','1.1.7'],['1.1.3','1.1.7'],['1.1.4','1.1.7'],['1.1.5','1.1.7'],['1.1.6','1.1.7'],
+  ['1.1.7','1.2.1'],['1.1.7','1.2.2'],['1.1.7','1.3.1'],
+  ['1.2.1','1.2.3'],['1.2.2','1.2.3'],
+  ['1.2.3','1.2.4'],['1.2.4','1.2.5'],
+  ['1.3.1','1.3.2'],['1.3.1','1.3.3'],['1.3.3','1.3.4'],
+  // HITO → arrancan 2.1.x (2.2.x depende de bioimpresión, 2.3.x depende de CAD+materiales)
+  ['1.2.5','2.1.1'],['1.2.5','2.1.2'],
+  ['1.3.4','2.1.2'],
+  // Receptáculo
+  ['2.1.1','2.1.3'],['2.1.2','2.1.3'],['2.1.3','2.1.4'],
+  // 2.1.3 (bioimpresión) → 2.2.1 (bombeo): depende del receptáculo físico
+  ['2.1.3','2.2.1'],
+  // Vital Circuits
+  ['2.2.1','2.2.2'],['2.2.2','2.2.3'],['2.2.3','2.2.4'],
+  // Electronics (2.3.x depende de materiales + CAD — no se puede hacer sin el diseño físico)
+  ['2.1.1','2.3.1'],['2.1.2','2.3.1'],
+  ['2.3.1','2.3.2'],['2.3.2','2.3.3'],['2.3.3','2.3.4'],
+  // Ph2→Ph3 (convergencia de los 3 subsistemas)
+  ['2.1.4','3.1.1'],['2.2.4','3.1.1'],['2.3.4','3.1.1'],
+  // Integration
+  ['3.1.1','3.1.2'],['3.1.2','3.1.3'],
+  ['3.1.3','3.2.1'],['3.1.3','3.2.2'],
+  ['3.2.1','3.2.3'],['3.2.2','3.2.3'],
+  ['3.2.3','3.2.4'],['3.2.4','3.3.1'],
+  // Ph3→Ph4
+  ['3.3.1','4.1.1'],['3.3.1','4.1.2'],['3.3.1','4.1.3'],['3.3.1','4.1.4'],
+  // Closure
+  ['4.1.1','4.2.1'],['4.1.2','4.2.1'],['4.1.3','4.2.1'],['4.1.4','4.2.1'],
+  ['4.2.1','4.2.2'],['4.2.2','END'],
+];
+
+// Critical edge: both float=0, and timing is tight
+const isCrit=(a,b)=>nFl(a)===0&&nFl(b)===0&&(nEF(a)+1===nES(b)||nEF(a)===nES(b));
+const isNear=(a,b)=>!isCrit(a,b)&&nFl(a)<=3&&nFl(b)<=3;
+
+// ══ Build SVG ════════════════════════════════════════════
+const svg=document.getElementById('net');
+const maxC=Math.max(...Object.values(ND).map(d=>d[8]));
+const maxR=Math.max(...Object.values(ND).map(d=>d[9]));
+const W=MX*2+(maxC)*CW+NW;
+const H=MY*2+(maxR)*RH+NH;
+svg.setAttribute('width',W);
+svg.setAttribute('height',H);
+svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+
+const defs=mkEl('defs');
+// Arrow markers
+const mkArr=(id,color)=>{
+  const m=mkEl('marker',{id,viewBox:'0 0 8 8',refX:'7',refY:'4',markerWidth:'5',markerHeight:'5',orient:'auto-start-reverse'});
+  m.appendChild(mkEl('path',{d:'M0,0 L8,4 L0,8 Z',fill:color}));
+  return m;
+};
+defs.appendChild(mkArr('ac','#f85149'));
+defs.appendChild(mkArr('an','#ffa657'));
+defs.appendChild(mkArr('ag','#404040'));
+// Risk hatch pattern
+const pat=mkEl('pattern',{id:'hatch',patternUnits:'userSpaceOnUse',width:'8',height:'8',patternTransform:'rotate(45)'});
+pat.appendChild(mkEl('line',{x1:'0',y1:'0',x2:'0',y2:'8',stroke:'rgba(248,81,73,0.2)','stroke-width':'4'}));
+defs.appendChild(pat);
+svg.appendChild(defs);
+
+// ── Phase bands ─────────────────────────────────────────
+const BANDS=[
+  {ph:1,cs:1,ce:7,lbl:'Fase 1 — Planificación'},
+  {ph:2,cs:8,ce:13,lbl:'Fase 2 — Desarrollo de Subsistemas'},
+  {ph:3,cs:14,ce:20,lbl:'Fase 3 — Integración y Validación'},
+  {ph:4,cs:21,ce:23,lbl:'Fase 4 — Cierre'},
+];
+const bandG=mkEl('g',{id:'bands'});
+BANDS.forEach(({ph,cs,ce,lbl})=>{
+  const bx=nx(cs)-14, by=MY/2;
+  const bw=nx(ce)+NW+14-bx, bh=H-MY/2;
+  const bg=mkEl('rect',{x:bx,y:by,width:bw,height:bh,rx:8,fill:PC[ph],opacity:'0.05'});
+  bandG.appendChild(bg);
+  // top border
+  const bl=mkEl('line',{x1:bx,y1:by,x2:bx+bw,y2:by,'stroke':PC[ph],'stroke-width':'1',opacity:'0.2'});
+  bandG.appendChild(bl);
+  const t=mkEl('text',{x:bx+10,y:by+16,'font-size':'10','font-family':'system-ui','font-weight':'700',fill:PC[ph],opacity:'0.7'});
+  t.textContent=lbl;
+  bandG.appendChild(t);
+});
+svg.appendChild(bandG);
+
+// ── Edges ───────────────────────────────────────────────
+const edgeG=mkEl('g',{id:'edges'});
+
+// Build successors map for entry offset
+const succ={}, pred={};
+EDGES.forEach(([a,b])=>{
+  if(!succ[a])succ[a]=[];
+  if(!pred[b])pred[b]=[];
+  succ[a].push(b);
+  pred[b].push(a);
+});
+
+EDGES.forEach(([a,b])=>{
+  const crit=isCrit(a,b), near=isNear(a,b);
+  // Source exit: right-center
+  const ax=nx(nC(a))+NW, ay=ny(nR(a))+NH/2;
+  // Target entry: left-center
+  const bx=nx(nC(b)), by=ny(nR(b))+NH/2;
+
+  const dxHalf=(bx-ax)*0.4;
+  const pathStr=`M${ax},${ay} C${ax+dxHalf},${ay} ${bx-dxHalf},${by} ${bx},${by}`;
+
+  const stroke=crit?'#f85149':near?'#ffa657':'#404040';
+  const sw=crit?2.8:near?2:1.4;
+  const mEnd=crit?'url(#ac)':near?'url(#an)':'url(#ag)';
+  const op=crit?'1':near?'0.8':'0.55';
+
+  const p=mkEl('path',{
+    d:pathStr,fill:'none',stroke,'stroke-width':sw,
+    'marker-end':mEnd,opacity:op,
+    class:crit?'ec':near?'en':'eg'
+  });
+  edgeG.appendChild(p);
+});
+svg.appendChild(edgeG);
+
+// ── Nodes ───────────────────────────────────────────────
+const nodeG=mkEl('g',{id:'nodes'});
+
+function addTxt(g,txt,x,y,opts={}){
+  const t=mkEl('text',{
+    x,y,'text-anchor':opts.a||'middle',
+    'font-family':opts.mono?'monospace':'system-ui',
+    'font-size':opts.sz||'9',
+    fill:opts.fill||'#8b949e',
+    'font-weight':opts.bold?'700':'400',
+  });
+  t.textContent=txt;
+  g.appendChild(t);
+}
+
+Object.entries(ND).forEach(([id])=>{
+  const x=nx(nC(id)), y=ny(nR(id));
+  const fl=nFl(id), ph=nPh(id), ms=nMS(id), risk=nRisk(id);
+  const isc=fl===0, isn=fl>0&&fl<=3;
+  const bc=isc?'#f85149':isn?'#ffa657':PC[ph];
+  const bw=isc?2.2:1.5;
+  const fill=isc?'rgba(248,81,73,0.09)':isn?'rgba(255,166,87,0.07)':'#161b22';
+  const flc=isc?'#f85149':isn?'#ffa657':'#3fb950';
+
+  const g=mkEl('g',{class:'node',transform:`translate(${x},${y})`});
+  g._id=id;
+
+  // Main rect
+  const bg=mkEl('rect',{class:'nbg',x:0,y:0,width:NW,height:NH,rx:4,fill,stroke:bc,'stroke-width':bw});
+  g.appendChild(bg);
+
+  // Risk hatch overlay
+  if(risk){
+    g.appendChild(mkEl('rect',{x:0,y:0,width:NW,height:NH,rx:4,fill:'url(#hatch)'}));
+  }
+
+  // Milestone indicator
+  if(ms){
+    const dm=mkEl('polygon',{points:`${NW-9},4 ${NW-3},${NH/2} ${NW-9},${NH-4} ${NW-15},${NH/2}`,fill:'#ffa657',opacity:'0.9'});
+    g.appendChild(dm);
+  }
+
+  // Dividers
+  const dColor=bc, dOp='0.4';
+  [[0,20,NW,20],[0,NH-19,NW,NH-19]].forEach(([x1,y1,x2,y2])=>{
+    g.appendChild(mkEl('line',{x1,y1,x2,y2,stroke:dColor,'stroke-width':'0.5',opacity:dOp}));
+  });
+  // Vertical dividers in header + footer rows
+  [[NW/3,0,NW/3,20],[2*NW/3,0,2*NW/3,20],
+   [NW/3,NH-19,NW/3,NH],[2*NW/3,NH-19,2*NW/3,NH]].forEach(([x1,y1,x2,y2])=>{
+    g.appendChild(mkEl('line',{x1,y1,x2,y2,stroke:dColor,'stroke-width':'0.5',opacity:'0.25'}));
+  });
+
+  if(id==='START'||id==='END'){
+    addTxt(g,id==='START'?'▶ INICIO':'⏹ FIN',NW/2,NH/2+5,{sz:'12',fill:'#e6edf3',bold:true});
+  } else {
+    // Top row: ES | DUR | EF
+    addTxt(g,nES(id),NW/6,13,{mono:true,sz:'9'});
+    addTxt(g,nDur(id)+'d',NW/2,13,{mono:true,sz:'9',fill:'#e6edf3',bold:true});
+    addTxt(g,nEF(id),5*NW/6,13,{mono:true,sz:'9'});
+
+    // Middle: ID (bold, colored) + name (truncated)
+    const nm=nName(id);
+    const short=nm.length>17?nm.slice(0,16)+'…':nm;
+    addTxt(g,id,NW/2,29,{sz:'8',fill:bc,bold:true});
+    addTxt(g,short,NW/2,40,{sz:'8',fill:'#c9d1d9'});
+
+    // Bottom: LS | Float | LF
+    addTxt(g,nLS(id),NW/6,NH-4,{mono:true,sz:'9'});
+    addTxt(g,fl,NW/2,NH-4,{mono:true,sz:'9',fill:flc,bold:true});
+    addTxt(g,nLF(id),5*NW/6,NH-4,{mono:true,sz:'9'});
+  }
+
+  // Hover events
+  g.addEventListener('mouseenter',e=>showTip(e,id));
+  g.addEventListener('mousemove',moveTip);
+  g.addEventListener('mouseleave',hideTip);
+
+  nodeG.appendChild(g);
+});
+svg.appendChild(nodeG);
+
+// ══ Tooltip ══════════════════════════════════════════════
+const tt=document.getElementById('tt');
+function showTip(e,id){
+  const fl=nFl(id), ms=nMS(id), risk=nRisk(id);
+  const flc=fl===0?'#f85149':fl<=3?'#ffa657':'#3fb950';
+  let h=`<div class="tt-id">${id}</div><div class="tt-name">${nName(id)}</div><div class="tt-g">`;
+  h+=`<span class="tk">ES — Inicio Temprano</span><span class="tv">Día ${nES(id)}</span>`;
+  h+=`<span class="tk">EF — Fin Temprano</span><span class="tv">Día ${nEF(id)}</span>`;
+  h+=`<span class="tk">Duración</span><span class="tv">${nDur(id)} días hábiles</span>`;
+  h+=`<span class="tk">LS — Inicio Tardío</span><span class="tv">Día ${nLS(id)}</span>`;
+  h+=`<span class="tk">LF — Fin Tardío</span><span class="tv">Día ${nLF(id)}</span>`;
+  h+=`<span class="tk">Holgura Total (Float)</span><span class="tv" style="color:${flc};font-weight:700">${fl} días</span>`;
+  if(nTE(id)>0){
+    h+=`<span class="tk">TE (PERT)</span><span class="tv">${nTE(id).toFixed(1)} hs/p</span>`;
+    h+=`<span class="tk">σ (desvío)</span><span class="tv">± ${nSig(id).toFixed(2)} hs</span>`;
+  }
+  h+=`</div>`;
+  if(fl===0&&id!=='START'&&id!=='END')
+    h+=`<div class="badge" style="background:rgba(248,81,73,.15);color:#f85149">⚑ CAMINO CRÍTICO</div>`;
+  if(ms) h+=`<div class="badge" style="background:rgba(255,166,87,.12);color:#ffa657">⬧ HITO — trámite ~30–45 días calendario</div>`;
+  if(risk) h+=`<div class="badge" style="background:rgba(248,81,73,.12);color:#f85149">⚠ ALTO RIESGO TÉCNICO</div>`;
+  tt.innerHTML=h; tt.classList.add('on'); moveTip(e);
+}
+function moveTip(e){
+  const m=14;
+  let x=e.clientX+m, y=e.clientY+m;
+  if(x+295>window.innerWidth) x=e.clientX-295-m;
+  if(y+210>window.innerHeight) y=e.clientY-210-m;
+  tt.style.left=x+'px'; tt.style.top=y+'px';
+}
+function hideTip(){tt.classList.remove('on')}
+
+// ══ Filter ════════════════════════════════════════════════
+let fMode='all';
+function setF(m){
+  fMode=m;
+  document.getElementById('bAll').className='btn'+(m==='all'?' on':'');
+  document.getElementById('bCrit').className='btn'+(m==='crit'?' on':'');
+  document.querySelectorAll('.node').forEach(n=>{
+    n.style.opacity=m==='all'?'1':nFl(n._id)===0?'1':'0.1';
+  });
+  document.querySelectorAll('.en,.eg').forEach(e=>{
+    e.style.opacity=m==='all'?(e.classList.contains('en')?'0.8':'0.55'):'0.04';
+  });
+}
+
+// ══ Toggle phase bands ════════════════════════════════════
+let phaseOn=true;
+function togglePhase(){
+  phaseOn=!phaseOn;
+  document.getElementById('bands').style.opacity=phaseOn?'1':'0';
+  document.getElementById('bPhase').className='btn'+(phaseOn?' on2':'');
+  document.getElementById('bPhase').textContent='Fases '+(phaseOn?'ON':'OFF');
+}
+
+// ══ Pan ═══════════════════════════════════════════════════
+const wrap=document.getElementById('wrap');
+let pan=false, sx, sy, slx, sly;
+wrap.addEventListener('mousedown',e=>{
+  if(e.target.closest('.node')) return;
+  pan=true; sx=e.clientX; sy=e.clientY; slx=wrap.scrollLeft; sly=wrap.scrollTop;
+});
+document.addEventListener('mousemove',e=>{
+  if(!pan)return;
+  wrap.scrollLeft=slx-(e.clientX-sx);
+  wrap.scrollTop=sly-(e.clientY-sy);
+});
+document.addEventListener('mouseup',()=>{pan=false});
+
+// Auto-scroll to center of critical path on load
+setTimeout(()=>{ wrap.scrollLeft=(wrap.scrollWidth-wrap.clientWidth)/2-200; },100);
+</script>
+</body>
+</html>
