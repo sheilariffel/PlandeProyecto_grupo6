@@ -47,7 +47,7 @@
 | **3.2 — Protocolo de Pruebas** | | | | | | | |
 | 3.2.1 | Ensayos Hidráulicos Integrados | 16.0 | 32.0 | 58.0 | **33.7** | 7.00 | 49.00 |
 | 3.2.2 | Ensayos Térmicos Integrados | 13.3 | 28.0 | 57.3 | **30.4** | 7.33 | 53.78 |
-| 3.2.3 | Simulación Circulación Continua 24hs | 18.7 | 37.3 | 78.7 | **41.1** | 10.00 | 100.00 |
+| 3.2.3 | Simulación Circulación Continua 24hs | 24 | 41.3 | 68.7 | **43.0** | 7.44 | 55.42 |
 | 3.2.4 | Informe Final de Resultados | 17.3 | 33.3 | 61.3 | **35.3** | 7.33 | 53.78 |
 | **3.3 — Control de Calidad** | | | | | | | |
 | 3.3.1 | Entrega a Tercero para Validación | 4.0 | 8.0 | 14.7 | **8.4** | 1.78 | 3.16 |
@@ -66,12 +66,9 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **TE Total** | **1554.2 hs/persona** |
-| **Suma de Varianzas** | **3235.0** |
-| **σ Total del Proyecto** | **56.9 hs** |
-| **IC 68%** | 1497 – 1611 hs |
-| **IC 95%** | 1440 – 1668 hs |
-| **IC 99.7%** | 1383 – 1725 hs |
+| **TE Total** | **1561.4 hs/persona** |
+| **Suma de Varianzas** | **306.44** |
+| **σ Total del Proyecto** | **56.63 hs** |
 | Días hábiles estimados | ~144 días (29 semanas) |
 | Duración calendario aprox. | ~7 meses *(incl. espera CICUAL)* |
 
