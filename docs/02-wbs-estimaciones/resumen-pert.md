@@ -90,20 +90,4 @@ Las siguientes tareas concentran la mayor incertidumbre del proyecto:
 | 7 | 1.2.1 | Documentación Comité de Ética | **95.6** | 9.8 hs | 🟡 Moderado |
 | 8 | 1.3.3 | Diseño Funcional del Sistema (Arquitectura) | **87.1** | 9.3 hs | 🟡 Moderado |
 
----
-
-## Notas de Actualización
-
-**Versión Gantt actualizada (Ulyana):**
-- Alineamiento con el diagrama de Gantt disponible en el repositorio
-- Total de tareas: **44 tareas** distribuidas en **4 fases**
-- Inclusión de nuevo hito: Obtención de Aprobación del Control de Calidad (3.2.6)
-- Renombres descriptivos para mayor claridad en ejecución
-- Reevaluación de duraciones de calendario: **164 días hábiles** (incremento de ~20 días respecto a versión anterior)
-
-> Priorizar Stage-Gates (SG-S1 a SG-S6) para detectar desvíos tempranamente.
-> El flujo de Fase 2 sigue modelo **Kanban** para máxima flexibilidad en desarrollo de subsistemas paralelos.
-
----
-
 *Cátedra Gestión de Proyectos · FIUNER · 2026*
