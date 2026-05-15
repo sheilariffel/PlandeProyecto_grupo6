@@ -67,24 +67,17 @@
 | Tamaño aproximado | Empresa especializada con equipo multidisciplinario de 8 personas (Bioingeniería, Biotecnología, Diseño Industrial, Desarrollo de Software) |
 | Área solicitante | Investigación y Desarrollo (I+D) |
 
-## Problema u oportunidad
+## Propuesta de valor
 
-> Las estrategias actuales de conservación son insuficientes para prevenir la extinción de 
-> especies en riesgo crítico como el rinoceronte blanco del norte (*Ceratotherium simum 
-> cottoni*), del cual quedan solo dos hembras vivas con capacidad reproductiva limitada. 
-> Los métodos disponibles —vientres sustitutos, reproducción asistida— presentan 
-> restricciones biológicas, logísticas y éticas que impiden controlar el desarrollo 
-> embrionario fuera del organismo materno de forma sistemática y replicable.
->
-> Esto representa una oportunidad tecnológica concreta: desarrollar un sistema de 
-> incubación gestacional extrauterina de entorno líquido con control automatizado de 
-> variables fisiológicas y arquitectura modular escalable. A diferencia de los antecedentes 
-> existentes (Biobag, EVE), el sistema BioNest no está orientado al soporte neonatal humano 
-> sino a la investigación veterinaria y a la conservación de especies, un nicho sin 
-> soluciones tecnológicas específicas en el mercado actual. La validación progresiva 
-> —iniciando en lagomorfos y escalando paramétricamente hacia especies de mayor 
-> complejidad— reduce el riesgo técnico y regulatorio de la inversión, y posiciona a 
-> NestBiotech como pionera en biotecnología aplicada a la conservación.
+El proyecto busca ofrecer una solución tecnológica modular y escalable, que permite simular de manera controlada el entorno intrauterino, generando nuevas posibilidades para la reproducción asistida y la conservación de especies animales en riesgo.
+
+A diferencia de los enfoques actuales, el sistema propone desarrollar un prototipo funcional de una incubadora gestacional extrauterina de entorno líquido con control automatizado de variables fisiológicas y arquitectura adaptable, que buscará replicar fielmente las condiciones fisiológicas maternas permitiendo un desarrollo embrionario más estable y menos invasivo. Esto reduce las limitaciones asociadas a métodos como los vientres sustitutos y amplía las capacidades experimentales en investigación biológica.
+
+La solución presenta un alto potencial de impacto en casos críticos de conservación, como el rinoceronte blanco del norte (Ceratotherium simum cottoni), donde las alternativas reproductivas actuales resultan insuficientes. 
+Por esto el proyecto adopta un enfoque de escalabilidad por diseño, donde el sistema se calibra y valida en lagomorfos (Oryctolagus cuniculus) que fueron elegidos porque presenta ventajas estratégicas como un tener un ciclo de gestación rápido (~31 días), documentación en literatura científica sobre parámetros fisiológicos, viabilidad ética y regulatoria (protocolos ya aprobados que aceleran la obtención de autorizaciones) y su relación costo-eficiencia (viabilidad antes de comprometer inversiones mayores). A su vez el diseño modular del sistema contempla desde el origen la adaptación a especies de mayor tamaño y complejidad mediante ajuste paramétrico (volumen del receptáculo, flujos de perfusión, rangos termo metabólicos), sin requerir rediseño estructural.
+
+Finalmente, al tratarse de un modelo escalable y adaptable permite su implementación bajo modelos de licenciamiento tecnológico, facilitando su transferencia a distintas instituciones y promoviendo avances en el campo de la biotecnología aplicada a la conservación.
+.
 
 ## Objetivo del proyecto
 
