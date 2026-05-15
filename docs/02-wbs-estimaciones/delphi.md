@@ -5,7 +5,7 @@
 > **Unidad:** Horas / Persona  
 > **O** = Optimista · **M** = Más probable · **P** = Pesimista
 
----
+----
 
 ##  Fórmulas
 
