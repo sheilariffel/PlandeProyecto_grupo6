@@ -266,7 +266,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
 .tt-k { color: var(--muted); }
 .tt-v { text-align: right; }
 .tt-ci { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 10px; color: var(--muted); font-family: var(--font-mono); line-height: 1.6; }
-.risk-badge { display: inline-block; background: rgba(248,81,73,.15); color: var(--risk); border: 1px solid rgba(248,81,73,.3); border-radius: 4px; padding: 1px 5px; font-size: 9px; font-weight: 700; margin-top: 6px; }
+.risk-badge { display: inline-block; background: rgba(248,81,73,.15); color: var(--risk); border: 1px solid rgba(248,81,73,.3); border-radius: 4px; padding: 1px 5px; font-size: 9px; font-weight: 700; }
 
 /* Scrollbar */
 .chart::-webkit-scrollbar { height: 5px; width: 5px; }
@@ -397,19 +397,19 @@ const ITEMS = [
   {T:'task', id:'3.2.3', name:'Simulación Circulación Continua 24hs',           ph:3, gr:'3.2', s:143, e:148, te:43.0, σ:7.44,v:55.42},
   {T:'task', id:'3.2.4', name:'Informe Final de Resultados y Conclusiones',     ph:3, gr:'3.2', s:149, e:153, te:35.3, σ:7.33, v:53.78},
   {T:'task', id:'3.2.5', name:'Entrega a Tercero para Control de calidad ',  ph:3, gr:'3.2', s:154, e:155, te:8.4,  σ:1.78, v:3.16},
-  {T:'task', id:'3.2.6', name:'obtencion de aprobacion del Control de calidad ',  ph:3, gr:'3.2', s:20, e:54, te:0,    σ:0,    v:0, milestone:true, wait:[15,20]},
+  {T:'task', id:'3.2.6', name:'obtencion de aprobacion del Control de calidad ',  ph:3, gr:'3.2', s:156, e:156, te:0,    σ:0,    v:0, milestone:true, wait:[155,156]},
   {T:'group', gr:'3.3', ph:3},
- 
+  
   // ── FASE 4 ─────────────────────────────────────────────
   {T:'phase', ph:4},
   {T:'group', gr:'4.1', ph:4},
-  {T:'task', id:'4.1.1', name:'Actualizar Planos Finales As-Built',             ph:4, gr:'4.1', s:156, e:158, te:23.8, σ:4.67, v:21.78},
-  {T:'task', id:'4.1.2', name:'Elaborar Fichas Técnicas',                       ph:4, gr:'4.1', s:156, e:158, te:22.3, σ:4.33, v:18.78},
-  {T:'task', id:'4.1.3', name:'Compilar Log de Decisiones',                     ph:4, gr:'4.1', s:156, e:157, te:13.6, σ:2.67, v:7.11},
-  {T:'task', id:'4.1.4', name:'Redactar Manual de Usuario',                     ph:4, gr:'4.1', s:156, e:160, te:35.9, σ:6.78, v:45.94},
+  {T:'task', id:'4.1.1', name:'Actualizar Planos Finales As-Built',             ph:4, gr:'4.1', s:157, e:159, te:23.8, σ:4.67, v:21.78},
+  {T:'task', id:'4.1.2', name:'Elaborar Fichas Técnicas',                       ph:4, gr:'4.1', s:157, e:159, te:22.3, σ:4.33, v:18.78},
+  {T:'task', id:'4.1.3', name:'Compilar Log de Decisiones',                     ph:4, gr:'4.1', s:157, e:158, te:13.6, σ:2.67, v:7.11},
+  {T:'task', id:'4.1.4', name:'Redactar Manual de Usuario',                     ph:4, gr:'4.1', s:157, e:161, te:35.9, σ:6.78, v:45.94},
   {T:'group', gr:'4.2', ph:4},
-  {T:'task', id:'4.2.1', name:'Reunión de Cierre',                              ph:4, gr:'4.2', s:161, e:161, te:5.4,  σ:1.00, v:1.00},
-  {T:'task', id:'4.2.2', name:'Presentación Final a Institución de Conservación',ph:4,gr:'4.2', s:162, e:164, te:18.7, σ:1.78, v:3.16},
+  {T:'task', id:'4.2.1', name:'Reunión de Cierre',                              ph:4, gr:'4.2', s:162, e:162, te:5.4,  σ:1.00, v:1.00},
+  {T:'task', id:'4.2.2', name:'Presentación Final a Institución de Conservación',ph:4,gr:'4.2', s:163, e:165, te:18.7, σ:1.78, v:3.16},
 ];
 
 const dx = d => (d - 1) * PPD;
@@ -485,7 +485,7 @@ function buildRows() {
       // Label row
       const ld = document.createElement('div');
       ld.className = 'r-task';
-      ld.innerHTML = `<span class="t-id">${item.id}</span><span class="t-name${item.risk?' risk':''}">${item.name}</span>${item.risk?'<span style="font-size:10px;flex-shrink:0">⚠</span>':''}${item.milestone?'<span style="font-size:11px;flex-shrink:0;color:var(--hito)">⬧</span>':''}`;
+      ld.innerHTML = `<span class="t-id">${item.id}</span><span class="t-name${item.risk?' risk':''}">${item.name}</span>${item.risk?'<span style="font-size:10px;flex-shrink:0">⚠</span>':''}`;
       lblBody.appendChild(ld);
 
       // Chart row
