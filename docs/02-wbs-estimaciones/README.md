@@ -17,9 +17,11 @@ Construir la WBS, definir la secuencia lógica de actividades y realizar estimac
 | Archivo | Contenido |
 |---------|-----------|
 | [`wbs.md`](wbs.md) | Work Breakdown Structure (mindmap) |
-| [`cronograma.md`](cronograma.md) | Cronograma con diagrama Gantt |
-| [`red-de-tareas.md`](red-de-tareas.md) | Red de precedencias y Camino Crítico |
-| [`delphi.md`](delphi.md) | Planilla de estimación Delphi (2 rondas) |
+| [`gantt.html`](gantt.html) | Diagrama de Gantt interactivo (PERT + Delphi) |
+| [`red-de-tareas.html`](red-de-tareas.html) | Red de precedencias y Camino Crítico |
+| [`delphi.md`](delphi.md) | Planilla de estimación Delphi (3 expertos) |
+| [`resumen-pert.md`](resumen-pert.md) | Resumen PERT consolidado con estadísticas |
+| [`Tabla de tareas.md`](Tabla%20de%20tareas.md) | Tabla de tareas con responsables y cronograma |
 
 ## Criterios de evaluación
 
