@@ -70,13 +70,13 @@ svg{display:block}
     <button class="btn on2" id="bPhase" onclick="togglePhase()">Fases ON</button>
   </div>
   <div class="stats">
-    <div class="stat"><div class="sv" style="color:var(--crit)">24</div><div class="sl">Tareas críticas</div></div>
+    <div class="stat"><div class="sv" style="color:var(--crit)">26</div><div class="sl">Tareas críticas</div></div>
     <div class="dv"></div>
-    <div class="stat"><div class="sv">164</div><div class="sl">Días hábiles</div></div>
+    <div class="stat"><div class="sv">165</div><div class="sl">Días hábiles</div></div>
     <div class="dv"></div>
     <div class="stat"><div class="sv">~8</div><div class="sl">Meses</div></div>
     <div class="dv"></div>
-    <div class="stat"><div class="sv">44</div><div class="sl">Tareas totales</div></div>
+    <div class="stat"><div class="sv">47</div><div class="sl">Tareas totales</div></div>
     <div class="dv"></div>
     <div class="stat"><div class="sv">2</div><div class="sl">Rutas críticas</div></div>
   </div>
@@ -150,17 +150,18 @@ const ND={
   '3.1.3': ['Calibración Sist.',7,131,137,131,137,  0, 3,16, 4, 49.9, 10.78 ],
   '3.2.1': ['Ensayos Hidraul.', 5,138,142,138,142,  0, 3,17, 3, 33.7,  7.00 ],
   '3.2.2': ['Ensayos Térmicos', 4,138,141,139,142,  1, 3,17, 5, 30.4,  7.33 ],
-  '3.2.3': ['Simulación 24hs',  6,143,148,143,148,  0, 3,18, 4, 41.1, 10.00 ],
+  '3.2.3': ['Simulación 24hs',  6,143,148,143,148,  0, 3,18, 4, 43.0,  7.44 ],
   '3.2.4': ['Informe Resultados',5,149,153,149,153, 0, 3,19, 4, 35.3,  7.33 ],
-  '3.3.1': ['Valid. Tercero',   2,154,155,154,155,  0, 3,20, 4,  8.4,  1.78 ],
+  '3.2.5': ['Entrega Tercero',  2,154,155,154,155,  0, 3,20, 4,  8.4,  1.78 ],
+  '3.2.6': ['HITO:Aprob.QC',    1,156,156,156,156,  0, 3,21, 4,  0,    0,    false, true],
   // Fase 4 — desplazada +20 días
-  '4.1.1': ['Planos As-Built',  3,156,158,158,160,  2, 4,21, 2, 23.8,  4.67 ],
-  '4.1.2': ['Fichas Técnicas',  3,156,158,158,160,  2, 4,21, 3, 22.3,  4.33 ],
-  '4.1.3': ['Log Decisiones',   2,156,157,159,160,  3, 4,21, 5, 13.6,  2.67 ],
-  '4.1.4': ['Manual Usuario',   5,156,160,156,160,  0, 4,21, 4, 35.9,  6.78 ],
-  '4.2.1': ['Reunión Cierre',   1,161,161,161,161,  0, 4,22, 4,  5.4,  1.00 ],
-  '4.2.2': ['Presentación Final',3,162,164,162,164, 0, 4,23, 4, 18.7,  1.78 ],
-  'END':   ['FIN',              0,164,164,164,164,  0, 0,24, 4,  0,    0    ],
+  '4.1.1': ['Planos As-Built',  3,157,159,159,161,  2, 4,21, 2, 23.8,  4.67 ],
+  '4.1.2': ['Fichas Técnicas',  3,157,159,159,161,  2, 4,21, 3, 22.3,  4.33 ],
+  '4.1.3': ['Log Decisiones',   2,157,158,160,161,  3, 4,21, 5, 13.6,  2.67 ],
+  '4.1.4': ['Manual Usuario',   5,157,161,157,161,  0, 4,21, 4, 35.9,  6.78 ],
+  '4.2.1': ['Reunión Cierre',   1,162,162,162,162,  0, 4,22, 4,  5.4,  1.00 ],
+  '4.2.2': ['Presentación Final',3,163,165,163,165, 0, 4,23, 4, 18.7,  1.78 ],
+  'END':   ['FIN',              0,165,165,165,165,  0, 0,24, 4,  0,    0    ],
 };
 
 // Accessors
@@ -197,9 +198,9 @@ const EDGES=[
   ['3.1.1','3.1.2'],['3.1.2','3.1.3'],
   ['3.1.3','3.2.1'],['3.1.3','3.2.2'],
   ['3.2.1','3.2.3'],['3.2.2','3.2.3'],
-  ['3.2.3','3.2.4'],['3.2.4','3.3.1'],
+  ['3.2.3','3.2.4'],['3.2.4','3.2.5'],['3.2.5','3.2.6'],
   // Ph3→Ph4
-  ['3.3.1','4.1.1'],['3.3.1','4.1.2'],['3.3.1','4.1.3'],['3.3.1','4.1.4'],
+  ['3.2.6','4.1.1'],['3.2.6','4.1.2'],['3.2.6','4.1.3'],['3.2.6','4.1.4'],
   // Closure
   ['4.1.1','4.2.1'],['4.1.2','4.2.1'],['4.1.3','4.2.1'],['4.1.4','4.2.1'],
   ['4.2.1','4.2.2'],['4.2.2','END'],
@@ -239,7 +240,7 @@ svg.appendChild(defs);
 const BANDS=[
   {ph:1,cs:1,ce:7,lbl:'Fase 1 — Planificación'},
   {ph:2,cs:8,ce:13,lbl:'Fase 2 — Desarrollo de Subsistemas'},
-  {ph:3,cs:14,ce:20,lbl:'Fase 3 — Integración y Validación'},
+  {ph:3,cs:14,ce:21,lbl:'Fase 3 — Integración y Validación'},
   {ph:4,cs:21,ce:23,lbl:'Fase 4 — Cierre'},
 ];
 const bandG=mkEl('g',{id:'bands'});
