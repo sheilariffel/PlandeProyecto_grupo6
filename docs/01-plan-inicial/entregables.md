@@ -5,32 +5,32 @@
 ```mermaid
 mindmap
   root(("🎯 BioNest"))
-    Entregable 1: Prototipo físico ensamblado
-      [Módulo de oxigenación]
-      [Circuito de bombeo]
-      [Integración mecánica del sistema]
-      [Receptáculo bioimpreso]
+    Entregable 1: Expediente bioético
+      [Restricciones de uso]
+      [Análisis bioético]
+      [Documentación para comité de ética]
+      [Marco normativo aplicable]
     Entregable 2: Sistema electrónico - Dashboard
       [Interfaz de usuario]
       [Adquisición de datos]
       [Presión, temperatura, pH, volumen]
       [Almacenamiento y registro de datos]
-    Entregable 3: Documentación técnica
-      [Especificaciones técnicas]
-      [Planos CAD]
-      [Fichas de biomateriales]
-      [Log técnico]
-      [Manual de usuario]
+    Entregable 3: Prototipo físico ensamblado
+      [Módulo de oxigenación]
+      [Circuito de bombeo]
+      [Integración mecánica del sistema]
+      [Receptáculo bioimpreso]
     Entregable 4: Protocolo de pruebas
       [Ensayos hidráulicos]
       [Pruebas de estanqueidad]
       [Ensayos térmicos]
       [Informe de resultados]
-    Entregable 5: Expediente bioético
-      [Restricciones de uso]
-      [Análisis bioético]
-      [Documentación para comité de ética]
-      [Marco normativo aplicable]
+    Entregable 5: Documentación técnica
+      [Especificaciones técnicas]
+      [Planos CAD]
+      [Fichas de biomateriales]
+      [Log técnico]
+      [Manual de usuario]
 ```
 
 ## Detalle de entregables
