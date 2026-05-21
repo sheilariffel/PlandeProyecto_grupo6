@@ -6,10 +6,14 @@
 
 | Rol | Persona asignada |
 |-----|-----------------|
-| [Rol 1 — ej: Director de Proyecto] | [COMPLETAR] |
-| [Rol 2 — ej: Analista] | [COMPLETAR] |
-| [Rol 3 — ej: Desarrollador] | [COMPLETAR] |
-| [Rol 4 — ej: Tester] | [COMPLETAR] |
+| [Rol 1 — Director de Proyecto] | [COMPLETAR] |
+| [Rol 2 — Bioingernierio] | [COMPLETAR] |
+| [Rol 3 — Especialista en Materiales] | [COMPLETAR] |
+| [Rol 4 — Biotecnólogo] | [COMPLETAR] |
+| [Rol 5 — Técnico de Laboratorio] | [COMPLETAR] |
+| [Rol 6 — Desarrollador de Software] | [COMPLETAR] |
+| [Rol 7 — Licenciado en Diseño Industrial] | [COMPLETAR] |
+| [Rol 8 — Responsable de Marketing] | [COMPLETAR] |
 
 ## Matriz
 
