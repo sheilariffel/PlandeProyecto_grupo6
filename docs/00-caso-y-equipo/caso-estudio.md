@@ -122,6 +122,13 @@
 - **Aprobación ética y regulatoria:** el expediente bioético será aprobado por CICUAL en tiempo y forma, permitiendo el avance al Stage-Gate 1 y el inicio de la fase de ejecución técnica sin demoras estructurales en el cronograma.
 - **Parámetros fisiológicos de lagomorfos suficientemente documentados:** la literatura científica disponible proveerá datos validados de presión, temperatura, pH y flujos fisiológicos de *Oryctolagus cuniculus* suficientes para definir los rangos de operación del sistema sin requerir estudios experimentales adicionales en esta fase.
 - **Disponibilidad de proveedores especializados:** los proveedores de biomateriales, componentes electrónicos e insumos de laboratorio podrán ser contratados y entregarán los materiales según los plazos requeridos por el cronograma del proyecto.
+- Supuestos de calendario laboral
+  - El proyecto observa un receso anual de 2 semanas consecutivas durante 
+  las cuales el equipo no opera. Fecha: ***Ver***
+  - Durante el receso no hay Daily Stand-ups, Replenishment ni avance de cards.
+  - El cronograma de Fase 1 absorbe el receso ajustando las fechas de 
+  finalización. La estimación de throughput de Fase 2 se calcula sobre 
+  50 semanas/año, no 52.
 
 ---
 
