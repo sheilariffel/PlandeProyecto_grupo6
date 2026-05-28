@@ -1,4 +1,4 @@
-# 🔄 Ciclo de Vida del Proyecto
+# 🔄 Ciclo de Vida del Proyecto 
 
 ## Enfoque seleccionado
 
