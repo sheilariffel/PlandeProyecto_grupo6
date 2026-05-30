@@ -77,8 +77,8 @@
 |----|-------|-----------------|-----------------|-----------------|-------|
 | 2.3.1 | Integración Matriz de Sensores (P/T/pH/Vol) | 32 · 72 · 144 | 30 · 50 · 86 | 40 · 64 · 100 | 4 sensores (P/T/pH/Vol) funcionando simultáneamente + selección + montaje + verificación |
 | 2.3.2 | Interfaz de Usuario (Dashboard) | 40 · 96 · 180 | 32 · 62 · 66 | 60 · 100 · 160 | UI tiempo real: 4 variables + alarmas + gráficos históricos. Sin crashes en prueba 24hs |
-| 2.3.3 | Sistema de Almacenamiento y Registro de Datos | 24 · 56 · 120 | 22 · 34 · 50 | 24 · 40 · 64 | BD persistente. Registro sin pérdidas 24hs (SG-S5) |
-| 2.3.4 | Módulo de Estimulación | 20 · 48 · 100 | 20 · 28 · 40 | 20 · 36 · 60 | Presión mecánica + emisión acústica en habitáculo |
+| 2.3.3 | Módulo de Estimulación | 20 · 48 · 100 | 20 · 28 · 40 | 20 · 36 · 60 | Presión mecánica + emisión acústica en habitáculo | 
+| 2.3.4 | Sistema de Almacenamiento y Registro de Datos | 24 · 56 · 120 | 22 · 34 · 50 | 24 · 40 · 64 | BD persistente. Registro sin pérdidas 24hs (SG-S5) |
 
 ### 3.1 Integración Mecánica y Electrónica
 
