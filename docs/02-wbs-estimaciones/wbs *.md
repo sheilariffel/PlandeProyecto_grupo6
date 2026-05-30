@@ -35,8 +35,8 @@ mindmap
       2.3 Sistema electrónico
         2.3.1 Matriz de sensores
         2.3.2 Dashboard de monitoreo
-        2.3.3 Sistema de registro
-        2.3.4 Módulo de estimulación
+        2.3.3 Módulo de estimulación
+        2.3.4 Sistema de registro
 
     3. Integración y validación
       3.1 Integración del sistema
@@ -134,8 +134,8 @@ mindmap
 |----|-------|-----------|--------|
 | 2.3.1 | Integración de matriz de sensores (Presión · Temp · pH · Vol) | Matriz de Sensores | Medio |
 | 2.3.2 | Desarrollo de la interfaz de usuario *(Dashboard)* | Dashboard Funcional | Medio |
-| 2.3.3 | Sistema de almacenamiento y registro de datos experimentales | Base de Datos Experimental | Bajo |
-| 2.3.4 | Módulo de estimulación | Módulo de Estimulación | Bajo |
+| 2.3.3 | Módulo de estimulación | Módulo de Estimulación | Bajo |
+| 2.3.4 | Sistema de almacenamiento y registro de datos experimentales | Base de Datos Experimental | Bajo |
 
 ---
 
