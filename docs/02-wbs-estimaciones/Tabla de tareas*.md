@@ -34,8 +34,8 @@
 | 2.2.4 | Sistema de Inyección de Nutrientes/Hormonas | 1.2.5 | Bioingeniero | 5 | ago-26 | No |
 | 2.3.1 | Integración Matriz de Sensores (P/T/pH/Vol) | 1.2.5 | Bioingeniero | 9 | ago-26 | No |
 | 2.3.2 | Interfaz de Usuario (Dashboard) | 2.3.1 | Desarrollador de Software | 11 | sep-26 | No |
-| 2.3.3 | Sistema de Almacenamiento y Registro de Datos | 2.3.2 | Desarrollador de Software | 6 | oct-26 | No |
-| 2.3.4 | Módulo de Estimulación | 1.2.5 | Bioingeniero | 5 | ago-26 | No |
+| 2.3.3 | Módulo de Estimulación | 1.2.5 | Bioingeniero | 5 | ago-26 | No |
+| 2.3.4 | Sistema de Almacenamiento y Registro de Datos | 2.3.2 | Desarrollador de Software | 6 | oct-26 | No |
 | **SG-S5** | 🏁 **Stage-Gate S5 — Sistema Electrónico Validado** | 2.3.3 | — | 0 | nov-26 | **Sí** |
 | | **FASE 3 — INTEGRACIÓN Y VALIDACIÓN FINAL** | | | | | |
 | 3.1.1 | Ensamblaje del Prototipo Físico Completo | SG-S1, SG-S2, SG-S3, SG-S4, SG-S5 | Equipo Multidisciplinario | 9 | nov-26 | No |
