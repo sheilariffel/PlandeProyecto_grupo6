@@ -38,8 +38,8 @@
 | **2.3 — Electrónica y Control** | | | | | | | |
 | 2.3.1 | Integración Matriz de Sensores (P/T/pH/Vol) | 34.0 | 62.0 | 110.0 | **65.3** | 12.67 | 160.44 |
 | 2.3.2 | Interfaz de Usuario (Dashboard) | 44.0 | 86.0 | 135.3 | **87.2** | 15.22 | 231.72 |
-| 2.3.3 | Sistema de Almacenamiento y Registro de Datos | 23.3 | 43.3 | 78.0 | **45.8** | 9.11 | 83.01 |
-| 2.3.4 | Módulo de Estimulación | 20.0 | 37.3 | 66.7 | **39.3** | 7.78 | 60.49 |
+| 2.3.3 | Módulo de Estimulación | 20.0 | 37.3 | 66.7 | **39.3** | 7.78 | 60.49 |
+| 2.3.4 | Sistema de Almacenamiento y Registro de Datos | 23.3 | 43.3 | 78.0 | **45.8** | 9.11 | 83.01 |
 | **3.1 — Integración Mecánica y Electrónica** | | | | | | | |
 | 3.1.1 | Ensamblaje del Prototipo Físico Completo | 36.7 | 64.7 | 113.3 | **68.1** | 12.78 | 163.27 |
 | 3.1.2 | Acoplamiento de Sensores al Dashboard | 16.0 | 33.3 | 64.0 | **35.6** | 8.00 | 64.00 |
